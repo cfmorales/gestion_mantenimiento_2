@@ -71,6 +71,16 @@ const routes: Routes = [
                 ]
             },
             {
+                path: 'list',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () =>
+                            import('../pages/list/list.module').then(m => m.ListPageModule)
+                    }
+                ]
+            },
+            {
                 path: 'feed',
                 children: [
                     {
