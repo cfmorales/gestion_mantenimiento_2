@@ -42,7 +42,18 @@ const routes: Routes = [
                             import('../pages/orden-administrador/orden-administrador.module').then(m => m.OrdenAdministradorPageModule)
                     }
                 ]
-            }, {
+            },
+            {
+                path: 'orden-cliente',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () =>
+                            import('../pages/orden-cliente/orden-cliente.module').then(m => m.OrdenClientePageModule)
+                    }
+                ]
+            },
+            {
                 path: 'bitacora',
                 children: [
                     {
