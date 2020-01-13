@@ -1,56 +1,31 @@
+<ion-split-pane>
+    <ion-menu contentId="content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Menú</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+                    <ion-item [routerLink]="p.url" routerDirection="forward"
+                              [class.active-item]="selectedPath === p.url">
+                        <ion-icon name="{{p.icon}}" slot="start"></ion-icon>
+                        {{p.title}}
+                    </ion-item>
 
-<ion-tabs>
+                </ion-menu-toggle>
+                <ion-item tappable="" (click)="logoutAction()">
+                    <ion-icon name="log-out" slot="start"></ion-icon>
+                    Salir
+                </ion-item>
+            </ion-list>
 
-    <ion-tab-bar slot="bottom" color="dark">
-        <ion-tab-button tab="feed">
-            <ion-icon name="paper"></ion-icon>
-            <ion-label>Feed</ion-label>
-        </ion-tab-button>
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="content" main></ion-router-outlet>
 
-        <ion-tab-button tab="messages">
-            <ion-icon name="send"></ion-icon>
-            <ion-label>Messages</ion-label>
-        </ion-tab-button>
+</ion-split-pane>
 
-        <ion-tab-button tab="notifications">
-            <ion-icon name="notifications"></ion-icon>
-            <ion-label>Contact</ion-label>
-        </ion-tab-button>
+<!--<app-tabs></app-tabs>-->
 
-        <ion-tab-button tab="settings">
-            <ion-icon name="cog"></ion-icon>
-            <ion-label>Settings</ion-label>
-        </ion-tab-button>
-
-    </ion-tab-bar>
-
-</ion-tabs>
-
-<!--<ion-header>-->
-<!--    <ion-toolbar>-->
-<!--        <ion-buttons slot="start">-->
-<!--            <ion-menu-button></ion-menu-button>-->
-<!--        </ion-buttons>-->
-<!--        <ion-title>-->
-<!--            Módulo de Repuestos-->
-<!--        </ion-title>-->
-<!--    </ion-toolbar>-->
-<!--</ion-header>-->
-
-<!--<ion-content>-->
-<!--&lt;!&ndash;    <ion-list>&ndash;&gt;-->
-<!--&lt;!&ndash;        <ion-item *ngFor="let item of items">&ndash;&gt;-->
-<!--&lt;!&ndash;            <ion-icon [name]="item.icon" slot="start"></ion-icon>&ndash;&gt;-->
-<!--&lt;!&ndash;            {{item.title}}&ndash;&gt;-->
-<!--&lt;!&ndash;            <div class="item-note" slot="end">&ndash;&gt;-->
-<!--&lt;!&ndash;                {{item.note}}&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;        </ion-item>&ndash;&gt;-->
-
-<!--&lt;!&ndash;    </ion-list>&ndash;&gt;-->
-<!--    &lt;!&ndash;-->
-<!--      <div *ngIf="selectedItem" padding>-->
-<!--        You navigated here from <b>{{selectedItem.title }}</b>-->
-<!--      </div>-->
-<!--    &ndash;&gt;-->
-<!--</ion-content>-->

@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Router, RouterEvent} from '@angular/router';
+import {AuthService} from './../services/auth.service';
 
 @Component({
     selector: 'app-home',
@@ -8,30 +10,57 @@ import {Component, OnInit} from '@angular/core';
 export class HomePage implements OnInit {
 
     private selectedItem: any;
-    private icons = [
-        'cog',
-        'clipboard',
-        'alert',
-        'attach'
-    ];
-    private titles = [
-        'Lista de repuestos a hacer mantenimiento',
-        'Ejecución del plan',
-        'Alerta del Plan',
-        'Ficha de ejecución del mantenimiento'];
-    public items: Array<{ title: string; note: string; icon: string }> = [];
-
-    constructor() {
-        for (let i = 0; i < this.titles.length; i++) {
-            this.items.push({
-                title: this.titles[i],
-                note: 'Comentario',
-                icon: this.icons[i]
-            });
+    public appPages = [
+        {
+            title: 'Home',
+            url: '/home',
+            icon: 'home'
+        },
+        {
+            title: 'Orden de trabajo administrador',
+            url: '/home/orden-administrador',
+            icon: 'square-outline'
+        },
+        {
+            title: 'Planificador',
+            url: '/home/planificador',
+            icon: 'key'
+        },
+        {
+            title: 'Orden de trabajo Cliente',
+            url: '/home/orden-cliente',
+            icon: 'square-outline'
+        },
+        {
+            title: 'Bitácora de máquina',
+            url: '/home/bitacora',
+            icon: 'folder-open'
+        },
+        {
+            title: 'Módulo de repuestos',
+            url: '/home/repuestos',
+            icon: 'construct'
+        },
+        {
+            title: 'Módulo de reportes',
+            url: '/home/list',
+            icon: 'cube'
         }
+    ];
+
+    selectedPath = '';
+
+    constructor(private router: Router, private authService: AuthService) {
+        this.router.events.subscribe((event: RouterEvent) => {
+            this.selectedPath = event.url;
+        });
     }
+
+
 
     ngOnInit() {
     }
-
+    logoutAction() {
+        this.authService.logout();
+    }
 }
