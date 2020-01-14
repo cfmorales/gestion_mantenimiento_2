@@ -24,6 +24,7 @@ export class FeedCardComponent implements OnInit {
   ngOnInit() {
     this.feedSerivce.feedData$.subscribe((res: any) => {
       this.feedData = res;
+      console.log(this.feedData);
     });
   }
 

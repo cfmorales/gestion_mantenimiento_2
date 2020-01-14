@@ -1,0 +1,16 @@
+{
+  "maquinaData": [
+    {
+      "maquina_id": "1",
+      "descripcion": "Envasadora de leche"
+    },
+    {
+      "maquina_id": "2",
+      "descripcion": "Esterilizador"
+    },
+    {
+      "maquina_id": "3",
+      "descripcion": "Silo"
+    }
+  ]
+}
