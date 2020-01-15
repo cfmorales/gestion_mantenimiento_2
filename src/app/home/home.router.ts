@@ -62,7 +62,19 @@ const routes: Routes = [
                             import('../pages/bitacora/bitacora.module').then(m => m.BitacoraPageModule)
                     }
                 ]
-            }, {
+            },
+            {
+                path: 'bitacoraDetalle',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () =>
+                            import('../pages/bitacora-detalle/bitacora-detalle.module').then(m => m.BitacoraDetallePageModule)
+                    }
+                ]
+            }
+            ,
+            {
                 path: 'repuestos',
                 children: [
                     {

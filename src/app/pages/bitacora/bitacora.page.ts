@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MaquinaService} from 'src/app/services/maquina.service';
 import {AuthService} from './../../services/auth.service';
 import {ToastService} from './../../services/toast.service';
+import {NavigationExtras, Router} from '@angular/router';
 
 @Component({
     selector: 'app-bitacora',
@@ -11,14 +12,15 @@ import {ToastService} from './../../services/toast.service';
 export class BitacoraPage implements OnInit {
     public authUser: any;
     public maquinaData: any;
-
+    slcMaquina = '';
 
     public postData;
 
     constructor(
         private auth: AuthService,
         private toastService: ToastService,
-        private maquinaService: MaquinaService
+        private maquinaService: MaquinaService,
+        private router: Router
     ) {
     }
 
@@ -35,8 +37,18 @@ export class BitacoraPage implements OnInit {
         }
     }
 
-    OnChange(event) {
-        console.log(event.target.value);
+    buscarMaquina() {
+        if (this.slcMaquina) {
+            console.log(this.slcMaquina);
+            let navigationExtras: NavigationExtras = {
+                state: {
+                    maquina_id: this.slcMaquina,
+                    token: this.authUser.token
+                }
+            };
+            this.router.navigate(['home/bitacoraDetalle'], navigationExtras);
+
+        }
     }
 
 

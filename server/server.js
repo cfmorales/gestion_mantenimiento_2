@@ -74,7 +74,7 @@ app.post('/feed', function (req, res, next) {
 
 app.post('/bitacora', function (req, res, next) {
     let data = JSON.parse(req.body);
-    if (data.token) {
+    if (data.token && data.maquina_id) {
         return res.status(200).json(mock.bitacoraData);
     } else {
         return res.status(401).send('No Access');

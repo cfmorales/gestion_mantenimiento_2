@@ -18,7 +18,7 @@
 
                 <ion-item>
                     <ion-label>Máquina</ion-label>
-                    <ion-select ngModel="slc_maquina" (ionChange)="OnChange($event)" name="slc_maquina" required="true">
+                    <ion-select [(ngModel)]="slcMaquina" name="slcMaquina" required="true">
                         <ion-select-option *ngFor="let item of maquinaData" value="{{item?.maquina_id}}" selected>
                             {{item?.descripcion}}</ion-select-option>
                     </ion-select>
@@ -26,6 +26,6 @@
             </ion-list>
 
         </ion-list>
-        <ion-button type="submit" >Buscar</ion-button>
+        <ion-button expand="block" share="round" color="light" (click)="buscarMaquina()">Buscar</ion-button>
     </form>
 </ion-content>

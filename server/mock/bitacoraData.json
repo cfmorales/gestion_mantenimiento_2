@@ -1,64 +1,70 @@
 {
-  "maquina_idData": [
+  "bitacoraData": [
     {
       "orden_id": "100",
       "maquina_id": "1",
       "user_id_fk": "1",
-      "created": "1566456759"
+      "tipo": "Correctivo",
+      "descripcion": "limpieza de placas de leche del pausterizador",
+      "encargado": "Omar tito",
+      "repuesto": "4 empaques placas y 2 empaques redodndos",
+      "tiempo": "8.5",
+      "created": "2019/02/27"
     },
     {
       "orden_id": "200",
       "maquina_id": "1",
       "user_id_fk": "1",
-      "created": "1566283656"
+      "tipo": "Correctivo",
+      "descripcion": "placas quemado producto, causa improlan no estaba bien disuelto y se pego en las placas calientes",
+      "encargado": "Omar tito",
+      "repuesto": "",
+      "tiempo": "1.5",
+      "created": "2019/03/3"
     },
     {
       "orden_id": "300",
       "maquina_id": "1",
       "user_id_fk": "2",
-      "created": "1566137529"
+      "tipo": "Preventivo",
+      "descripcion": "limpieza de placas del pasteurizador",
+      "encargado": "Guido Reinoso",
+      "repuesto": "4 empaques placas y 2 empaques redodndos",
+      "tiempo": "2",
+      "created": "2019/03/10"
     },
     {
       "orden_id": "400",
-      "maquina_id": "2",
+      "maquina_id": "1",
       "user_id_fk": "2",
-      "created": "1565074471"
+      "tipo": "Correctivo",
+      "descripcion": "limpieza de placas, quemadas por mala operación,remplazo de dos  empaques",
+      "encargado": "Omar tito",
+      "repuesto": "4 empaques placas y 2 empaques redodndos",
+      "tiempo": "2",
+      "created": "2019/08/30"
     },
     {
       "orden_id": "500",
-      "maquina_id": "2",
+      "maquina_id": "1",
       "user_id_fk": "3",
-      "created": "1563872497"
+      "tipo": "Correctivo",
+      "descripcion": "limpieza de placas de leche del pausterizador",
+      "encargado": "Operadores",
+      "repuesto": "",
+      "tiempo": "2",
+      "created": "2019/09/27"
     },
     {
       "orden_id": "600",
       "maquina_id": "1",
       "user_id_fk": "1",
-      "created": "1563872391"
-    },
-    {
-      "orden_id": "700",
-      "maquina_id": "3",
-      "user_id_fk": "1",
-      "created": "1563712541"
-    },
-    {
-      "orden_id": "751",
-      "maquina_id": "3",
-      "user_id_fk": "1",
-      "created": "1563519224"
-    },
-    {
-      "orden_id": "784",
-      "maquina_id": "1",
-      "user_id_fk": "2",
-      "created": "1562480696"
-    },
-    {
-      "orden_id": "785",
-      "maquina_id": "2",
-      "user_id_fk": "2",
-      "created": "1562316826"
+      "tipo": "Instalación",
+      "descripcion": "Se procede a desmontaje y señalización tableros y cableado de fuerza y control; se asegura tablero pasteurizador en medio silo 1 y silo nuevo, desmontaje tablero de peso-volumen silo nuevo; se procede a pasar cableado y recorrerlo para conexionado, se realiza espacio en tablero y se adiciona control extra, se saca cableado revolvedores y se prueba pasteurizador cambiando mangueras neumáticas y cable fuerza a bomba",
+      "encargado": "Coesma",
+      "repuesto": "",
+      "tiempo": "18",
+      "created": "2019/12/17"
     }
   ]
 }
