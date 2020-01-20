@@ -29,13 +29,13 @@
 
         <ion-item>
             <ion-label>Desde</ion-label>
-            <ion-datetime [(ngModel)]="bitacoraDesde" name="bitacoraDesde" value="2018-01-01" placeholder="Select Date"
+            <ion-datetime [(ngModel)]="bitacoraDesde" name="bitacoraDesde" value="2018-01-01" placeholder="Fecha desde"
                           required="true"></ion-datetime>
         </ion-item>
 
         <ion-item>
             <ion-label>Hasta</ion-label>
-            <ion-datetime [(ngModel)]="bitacoraHasta" name="bitacoraHasta" placeholder="Select Date"></ion-datetime>
+            <ion-datetime [(ngModel)]="bitacoraHasta" name="bitacoraHasta" placeholder="Fecha hasta"></ion-datetime>
         </ion-item>
 
         <ion-button expand="block" share="round" color="light" (click)="buscarMaquina()">Buscar</ion-button>
