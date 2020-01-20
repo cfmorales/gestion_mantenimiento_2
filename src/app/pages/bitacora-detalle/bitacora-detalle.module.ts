@@ -21,10 +21,11 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         IonicModule,
-        ModalPageModule,
+        // ModalPageModule,
         RouterModule.forChild(routes)
     ],
-    declarations: [BitacoraDetallePage]
+    declarations: [BitacoraDetallePage],
+    entryComponents: [BitacoraDetallePage],
 })
 export class BitacoraDetallePageModule {
 }

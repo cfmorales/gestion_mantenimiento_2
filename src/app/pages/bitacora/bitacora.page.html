@@ -4,7 +4,7 @@
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-title>
-            Bitácora de Máquina {{ authUser?.name}}
+            Bitácora de Máquina
 
         </ion-title>
     </ion-toolbar>
@@ -26,6 +26,18 @@
             </ion-list>
 
         </ion-list>
+
+        <ion-item>
+            <ion-label>Desde</ion-label>
+            <ion-datetime [(ngModel)]="bitacoraDesde" name="bitacoraDesde" value="2018-01-01" placeholder="Select Date"
+                          required="true"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Hasta</ion-label>
+            <ion-datetime [(ngModel)]="bitacoraHasta" name="bitacoraHasta" placeholder="Select Date"></ion-datetime>
+        </ion-item>
+
         <ion-button expand="block" share="round" color="light" (click)="buscarMaquina()">Buscar</ion-button>
     </form>
 </ion-content>

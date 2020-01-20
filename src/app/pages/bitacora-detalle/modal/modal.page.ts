@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalController} from '@ionic/angular';
+import {ModalController, NavParams} from '@ionic/angular';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
     selector: 'app-modal',
@@ -7,11 +8,15 @@ import {ModalController} from '@ionic/angular';
     styleUrls: ['./modal.page.scss'],
 })
 export class ModalPage implements OnInit {
+    item;
 
-    constructor(private modalController: ModalController) {
+
+    constructor(private modalController: ModalController, public navParams: NavParams) {
     }
 
     ngOnInit() {
+        this.item = this.navParams.get('item');
+        console.log(this.navParams.get('item'));
     }
 
     dismiss() {

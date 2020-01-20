@@ -1,11 +1,38 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>modal
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Información detallada de la máquina
 
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <button (click)="dismiss()">sdfg</button>
+    <ion-card name="item">
+        <ion-item>
+            <strong>Descripción: </strong> {{item.descripcion}}
+        </ion-item>
+
+        <ion-item>
+            <strong>Encargado: </strong> {{item.encargado}}
+
+        </ion-item>
+        <ion-item>
+            <strong>Tipo: </strong> {{item.tipo}}
+        </ion-item>
+        <ion-item>
+            <strong>Repuesto: </strong> {{item.repuesto}}
+        </ion-item>
+        <ion-item>
+            <strong>Tiempo: </strong> {{item.tiempo}} horas
+        </ion-item>
+        <ion-item>
+            <strong>Fecha: </strong> {{item.created}}
+        </ion-item>
+
+    </ion-card>
+
+    <ion-button (click)="dismiss()" expand="block" share="round" color="light">Cerrar</ion-button>
 </ion-content>

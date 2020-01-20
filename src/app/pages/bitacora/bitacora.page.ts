@@ -13,7 +13,8 @@ export class BitacoraPage implements OnInit {
     public authUser: any;
     public maquinaData: any;
     slcMaquina = '';
-
+    bitacoraDesde = '';
+    bitacoraHasta = '';
     public postData;
 
     constructor(
@@ -38,16 +39,23 @@ export class BitacoraPage implements OnInit {
     }
 
     buscarMaquina() {
-        if (this.slcMaquina) {
+        if (this.slcMaquina && this.bitacoraDesde) {
             console.log(this.slcMaquina);
             let navigationExtras: NavigationExtras = {
-                state: {
-                    maquina_id: this.slcMaquina,
-                    token: this.authUser.token
+                    state: {
+                        maquina_id: this.slcMaquina,
+                        desde: this.bitacoraDesde,
+                        hasta: this.bitacoraHasta,
+                        token: this.authUser.token
+                    }
                 }
-            };
+            ;
             this.router.navigate(['home/bitacoraDetalle'], navigationExtras);
 
+        } else {
+            this.toastService.presentToast(
+                'Se debe llenar el campo máquina y los rangos de fecha.'
+            );
         }
     }
 
