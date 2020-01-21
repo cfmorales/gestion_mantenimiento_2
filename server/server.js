@@ -10,7 +10,9 @@ let mock = {
     feedData: require('./mock/feedData'),
     feedDelete: require('./mock/feedDelete'),
     bitacoraData: require('./mock/bitacoraData'),
-    maquinaData: require('./mock/maquinaData')
+    maquinaData: require('./mock/maquinaData'),
+    planificadorData: require('./mock/planificadorData'),
+
 };
 
 app.use(function (req, res, next) {
@@ -76,6 +78,14 @@ app.post('/bitacora', function (req, res, next) {
     let data = JSON.parse(req.body);
     if (data.token && data.maquina_id) {
         return res.status(200).json(mock.bitacoraData);
+    } else {
+        return res.status(401).send('No Access');
+    }
+});
+app.post('/planificador_get', function (req, res, next) {
+    let data = JSON.parse(req.body);
+    if (data.token) {
+        return res.status(200).json(mock.planificadorData);
     } else {
         return res.status(401).send('No Access');
     }

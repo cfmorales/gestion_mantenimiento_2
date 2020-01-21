@@ -10,7 +10,7 @@ const routes: Routes = [
     {
         path: '',
         loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-    },  { path: 'modal', loadChildren: './pages/bitacora-detalle/modal/modal.module#ModalPageModule' }
+    },
 
 ];
 

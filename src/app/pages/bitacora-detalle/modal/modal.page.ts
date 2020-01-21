@@ -16,7 +16,6 @@ export class ModalPage implements OnInit {
 
     ngOnInit() {
         this.item = this.navParams.get('item');
-        console.log(this.navParams.get('item'));
     }
 
     dismiss() {

@@ -33,7 +33,7 @@ export class BitacoraPage implements OnInit {
         if (this.postData) {
             this.maquinaService.maquinaData(this.postData).subscribe((res: any) => {
                 this.maquinaData = res.maquinaData;
-                console.log(this.maquinaData);
+                // console.log(this.maquinaData);
             });
         }
     }

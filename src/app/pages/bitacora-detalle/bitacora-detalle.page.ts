@@ -51,8 +51,6 @@ export class BitacoraDetallePage implements OnInit {
     }
 
     async openModal(item2) {
-        console.log('item bit' + item2.descripcion);
-
         const modal = await this.modalController.create({
             component: ModalPage,
             componentProps: {

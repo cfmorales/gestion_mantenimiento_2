@@ -1,0 +1,94 @@
+{
+  "planificadorData": [
+    {
+      "orden_id": "1",
+      "area": "Pasteurizadora",
+      "maquina_id": {
+        "maquina_id": "1",
+        "descripcion": "Pateurizador"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "2020/02/20",
+      "sintomas": "placas quemado producto",
+      "especialidad": "1",
+      "prioridad": "2",
+      "mantenimiento": "1",
+      "estado": "Completo"
+    },
+    {
+      "orden_id": "2",
+      "area": "Esterilizadora",
+      "maquina_id": {
+        "maquina_id": "2",
+        "descripcion": "Esterilizador"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "2020/02/21",
+      "sintomas": "Reemplazo empaque",
+      "especialidad": "1",
+      "prioridad": "2",
+      "mantenimiento": "1",
+      "estado": "Pendiente"
+    },
+    {
+      "orden_id": "3",
+      "area": "Almacenamiento",
+      "maquina_id": {
+        "maquina_id": "1",
+        "descripcion": "Silo"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "2020/02/22",
+      "sintomas": "Limpieza",
+      "especialidad": "2",
+      "prioridad": "2",
+      "mantenimiento": "2",
+      "estado": "Pendiente"
+    },
+    {
+      "orden_id": "4",
+      "area": "Pasteurizadora",
+      "maquina_id": {
+        "maquina_id": "1",
+        "descripcion": "Pateurizador"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "2020/02/23",
+      "sintomas": "placas quemado producto",
+      "especialidad": "1",
+      "prioridad": "2",
+      "mantenimiento": "1",
+      "estado": "Pendiente"
+    },
+    {
+      "orden_id": "5",
+      "area": "Esterilizadora",
+      "maquina_id": {
+        "maquina_id": "1",
+        "descripcion": "Esterilizador"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "2020/02/24",
+      "sintomas": "Fuga de agua",
+      "especialidad": "1",
+      "prioridad": "2",
+      "mantenimiento": "1",
+      "estado": "Pendiente"
+    }
+  ]
+}

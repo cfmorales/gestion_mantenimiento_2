@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     component: PlanificadorPage
-  }
+  },  { path: 'edit-modal', loadChildren: './edit-modal/edit-modal.module#EditModalPageModule' }
+
 ];
 
 @NgModule({
