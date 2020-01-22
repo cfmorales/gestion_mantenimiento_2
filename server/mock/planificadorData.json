@@ -10,12 +10,14 @@
       "user_id_fk": "1",
       "proceso": "",
       "solicitado": "Omar tito",
-      "parada_pro": "1",
+      "parada_pro": "2",
       "fecha": "2020/02/20",
       "sintomas": "placas quemado producto",
       "especialidad": "1",
       "prioridad": "2",
       "mantenimiento": "1",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/21",
       "estado": "Completo"
     },
     {
@@ -28,12 +30,14 @@
       "user_id_fk": "1",
       "proceso": "",
       "solicitado": "Omar tito",
-      "parada_pro": "1",
+      "parada_pro": "2",
       "fecha": "2020/02/21",
       "sintomas": "Reemplazo empaque",
-      "especialidad": "1",
+      "especialidad": "3",
       "prioridad": "2",
       "mantenimiento": "1",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/21",
       "estado": "Pendiente"
     },
     {
@@ -52,6 +56,8 @@
       "especialidad": "2",
       "prioridad": "2",
       "mantenimiento": "2",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/21",
       "estado": "Pendiente"
     },
     {
@@ -70,6 +76,8 @@
       "especialidad": "1",
       "prioridad": "2",
       "mantenimiento": "1",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/21",
       "estado": "Pendiente"
     },
     {
@@ -88,6 +96,8 @@
       "especialidad": "1",
       "prioridad": "2",
       "mantenimiento": "1",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/21",
       "estado": "Pendiente"
     }
   ]

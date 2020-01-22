@@ -6,7 +6,7 @@
 
 <ion-content>
     <form>
-        <ion-grid>
+        <ion-grid *ngIf=" caso == 1">
             <ion-item-divider color="medium">
                 <ion-label class="ion-text-center">
                     DATOS DEL TRABAJO
@@ -17,73 +17,44 @@
                     <ion-label class="ion-text-center"></ion-label>
                     <ion-item>
                         <ion-label class='label-input'>Área:</ion-label>
-                        <ion-input type="text" *ngIf=" caso == 2" value="{{data.area}}" required="true"></ion-input>
-                        <ion-input type="text" *ngIf=" caso == 1" required="true"></ion-input>
+
+                        <ion-input type="text" required="true"></ion-input>
                     </ion-item>
                     <ion-label class="ion-text-center"></ion-label>
                     <ion-item>
                         <ion-label class='label-input'>Máquina:</ion-label>
-                        <ion-input type="text" *ngIf=" caso == 2" value="{{data.maquina_id.descripcion}}"
-                                   required="true"></ion-input>
-                        <ion-input type="text" *ngIf=" caso == 1" required="true"></ion-input>
+                        <ion-input type="text" required="true"></ion-input>
                     </ion-item>
                     <ion-item>
                         <ion-label class='label-input'>Proceso:</ion-label>
-                        <ion-input type="text" *ngIf=" caso == 2" value="{{data.proceso}}" required="true"></ion-input>
-                        <ion-input type="text" *ngIf=" caso == 1" required="true"></ion-input>
+                        <ion-input type="text" required="true"></ion-input>
 
                     </ion-item>
                     <ion-label class="ion-text-center"></ion-label>
                     <ion-item>
                         <ion-label class='label-input'>Solicitado por:</ion-label>
-                        <ion-input type="text" *ngIf=" caso == 2" value="{{data.solicitado}}"
-                                   required="true"></ion-input>
-                        <ion-input type="text" *ngIf=" caso == 1" required="true"></ion-input>
+                        <ion-input type="text" required="true"></ion-input>
 
                     </ion-item>
                 </ion-col>
 
                 <ion-col size="6">
                     <ion-list>
-                        <ion-radio-group *ngIf="caso == 2" name="orden_cli_parada_proceso">
+                        <ion-radio-group name="orden_cli_parada_proceso">
                             <ion-list-header>
                                 <ion-label>PARADA DE PROCESO</ion-label>
                             </ion-list-header>
 
                             <ion-item>
                                 <ion-label>Si</ion-label>
-                                <ion-radio slot="start" *ngIf="data.parada_pro == 1" color="danger"
-                                           value="si" checked=""></ion-radio>
-                                <ion-radio slot="start" *ngIf="data.parada_pro == 2" color="danger"
-                                           value="no"></ion-radio>
-                            </ion-item>
 
-                            <ion-item>
-                                <ion-label>No</ion-label>
-                                <ion-radio slot="start" *ngIf="data.parada_pro == 2" color="danger"
-                                           value="si" checked=""></ion-radio>
-                                <ion-radio slot="start" *ngIf="data.parada_pro === 1" color="danger"
-                                           value="no"></ion-radio>
-                            </ion-item>
-
-                        </ion-radio-group>
-                        <ion-radio-group *ngIf="caso == 1" name="orden_cli_parada_proceso">
-                            <ion-list-header>
-                                <ion-label>PARADA DE PROCESO</ion-label>
-                            </ion-list-header>
-
-                            <ion-item>
-                                <ion-label>Si</ion-label>
-                                <ion-radio slot="start" color="danger"
-                                           value="si" checked=""></ion-radio>
                                 <ion-radio slot="start" color="danger"
                                            value="no"></ion-radio>
                             </ion-item>
 
                             <ion-item>
                                 <ion-label>No</ion-label>
-                                <ion-radio slot="start" color="danger"
-                                           value="si" checked=""></ion-radio>
+
                                 <ion-radio slot="start" color="danger"
                                            value="no"></ion-radio>
                             </ion-item>
@@ -92,9 +63,8 @@
                     </ion-list>
                     <ion-item>
                         <ion-label class='label-input' position="floating">FECHA:</ion-label>
-                        <ion-datetime displayFormat="D MMM YYYY H:mm" *ngIf="caso == 2" value="{{data.fecha}}"
-                                      required="true"></ion-datetime>
-                        <ion-datetime displayFormat="D MMM YYYY H:mm" *ngIf="caso == 1"
+
+                        <ion-datetime displayFormat="D MMM YYYY H:mm"
                                       required="true"></ion-datetime>
                     </ion-item>
                 </ion-col>
@@ -148,27 +118,181 @@
                 <ion-col>
                     <ion-list>
                         <ion-item *ngFor="let entry of especialidad">
-                            <ion-label>{{entry.val}}</ion-label>
+                            <ion-label>{{entry.tipo}}</ion-label>
                             <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" color="danger"
-                                          name="{{entry.val}}"></ion-checkbox>
+                                          name="{{entry.tipo}}"></ion-checkbox>
                         </ion-item>
                     </ion-list>
                 </ion-col>
                 <ion-col>
                     <ion-list>
                         <ion-item *ngFor="let entry of prioridad">
-                            <ion-label>{{entry.val}}</ion-label>
+                            <ion-label>{{entry.tipo}}</ion-label>
                             <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" color="danger"
-                                          name="{{entry.val}}"></ion-checkbox>
+                                          name="{{entry.tipo}}"></ion-checkbox>
                         </ion-item>
                     </ion-list>
                 </ion-col>
                 <ion-col>
                     <ion-list>
                         <ion-item *ngFor="let entry of mant">
-                            <ion-label>{{entry.val}}</ion-label>
+                            <ion-label>{{entry.tipo}}</ion-label>
                             <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" color="danger"
-                                          name="{{entry.val}}"></ion-checkbox>
+                                          name="{{entry.tipo}}"></ion-checkbox>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <!--editar-->
+        <ion-grid *ngIf=" caso == 2">
+            <ion-item-divider color="medium">
+                <ion-label class="ion-text-center">
+                    DATOS DEL TRABAJO
+                </ion-label>
+            </ion-item-divider>
+            <ion-row class="row-padding-divider">
+                <ion-col size="6">
+                    <ion-label class="ion-text-center"></ion-label>
+                    <ion-item>
+                        <ion-label class='label-input'>Área:</ion-label>
+
+                        <ion-input type="text" required="true" value="{{data.area}}"></ion-input>
+                    </ion-item>
+                    <ion-label class="ion-text-center"></ion-label>
+                    <ion-item>
+                        <ion-label class='label-input'>Máquina:</ion-label>
+                        <ion-input type="text" required="true" value="{{data.maquina_id.descripcion}}"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label class='label-input'>Proceso:</ion-label>
+                        <ion-input type="text" required="true" value="{{data.proceso}}"></ion-input>
+
+                    </ion-item>
+                    <ion-label class="ion-text-center"></ion-label>
+                    <ion-item>
+                        <ion-label class='label-input'>Solicitado por:</ion-label>
+                        <ion-input type="text" required="true" value="{{data.solicitado}}"></ion-input>
+
+                    </ion-item>
+                </ion-col>
+
+                <ion-col size="6">
+                    <ion-list>
+                        <ion-radio-group name="orden_cli_parada_proceso">
+                            <ion-list-header>
+                                <ion-label>PARADA DE PROCESO</ion-label>
+                            </ion-list-header>
+
+                            <ion-item *ngIf="data.parada_pro == 1">
+                                <ion-label>Si</ion-label>
+
+                                <ion-radio slot="start" color="danger"
+                                           value="si" checked=""></ion-radio>
+                            </ion-item>
+                            <ion-item *ngIf="data.parada_pro == 2">
+                                <ion-label>Si</ion-label>
+
+                                <ion-radio slot="start" color="danger"
+                                           value="si"></ion-radio>
+                            </ion-item>
+                            <ion-item *ngIf="data.parada_pro == 2">
+                                <ion-label>No</ion-label>
+
+                                <ion-radio slot="start" color="danger"
+                                           value="no" checked=""></ion-radio>
+                            </ion-item>
+                            <ion-item *ngIf="data.parada_pro == 1">
+                                <ion-label>No</ion-label>
+
+                                <ion-radio slot="start" color="danger"
+                                           value="no"></ion-radio>
+                            </ion-item>
+
+                        </ion-radio-group>
+
+                    </ion-list>
+                    <ion-item>
+                        <ion-label class='label-input' position="floating">FECHA:</ion-label>
+
+                        <ion-datetime displayFormat="D MMM YYYY H:mm"
+                                      required="true" value="{{data.fecha}}"></ion-datetime>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-item-divider color="medium">
+                <ion-label class="ion-text-center">
+                    SINTOMAS DE FALLAS / TRABAJO REALIZADO
+                </ion-label>
+            </ion-item-divider>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-textarea rows="15" placeholder="Ingrese la informacion aquí..."
+                                      value="{{data.sintomas}}"></ion-textarea>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label class='label-input' position="stacked" autofocus>RECIBIDO POR:</ion-label>
+                        <ion-input required="true" type="text" readonly="" value="{{data.recibido_sintomas}}">
+                            <strong></strong>
+                        </ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label class='label-input' position="floating">FECHA:</ion-label>
+                        <ion-datetime displayFormat="D MMM YYYY H:mm" required="true"
+                                      value="{{data.fecha_sintomas}}"></ion-datetime>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-item-divider color="medium">
+                <ion-col>
+                    <ion-label>
+                        ESPECIALIDAD
+                    </ion-label>
+                </ion-col>
+                <ion-col>
+                    <ion-label>
+                        PRIORIDAD
+                    </ion-label>
+                </ion-col>
+                <ion-col>
+                    <ion-label>
+                        MANTENIMIENTO
+                    </ion-label>
+                </ion-col>
+            </ion-item-divider>
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-item *ngFor="let entry of especialidadEditVal">
+                            <ion-label>{{entry.tipo}}</ion-label>
+                            <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" color="danger"
+                                          name="{{entry.tipo}}"></ion-checkbox>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col>
+                    <ion-list>
+                        <ion-item *ngFor="let entry of prioEditVal">
+                            <ion-label>{{entry.tipo}}</ion-label>
+                            <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" color="danger"
+                                          name="{{entry.tipo}}"></ion-checkbox>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col>
+                    <ion-list>
+                        <ion-item *ngFor="let entry of manEditVal">
+                            <ion-label>{{entry.tipo}}</ion-label>
+                            <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" color="danger"
+                                          name="{{entry.tipo}}"></ion-checkbox>
                         </ion-item>
                     </ion-list>
                 </ion-col>

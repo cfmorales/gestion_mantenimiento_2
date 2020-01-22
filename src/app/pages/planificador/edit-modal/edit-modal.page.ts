@@ -8,6 +8,10 @@ import {AuthService} from '../../../services/auth.service';
     styleUrls: ['./edit-modal.page.scss'],
 })
 export class EditModalPage implements OnInit {
+
+    constructor(private modalController: ModalController, public navParams: NavParams, private auth: AuthService) {
+    }
+
     titulo;
     data;
     caso;
@@ -18,39 +22,62 @@ export class EditModalPage implements OnInit {
         token: ''
     };
     public especialidad = [
-        {val: 'Mecánica', isChecked: true},
-        {val: 'Eléctrica', isChecked: false},
-        {val: 'Control', isChecked: false}
+        {tipo: 'Mecánica', isChecked: false, val: '1'},
+        {tipo: 'Eléctrica', isChecked: false, val: '2'},
+        {tipo: 'Control', isChecked: false, val: '3'}
     ];
     public prioridad = [
-        {val: 'Emergente', isChecked: true},
-        {val: 'Urgente', isChecked: false},
-        {val: 'Programable', isChecked: false}
+        {tipo: 'Emergente', isChecked: false, val: '1'},
+        {tipo: 'Urgente', isChecked: false, val: '2'},
+        {tipo: 'Programable', isChecked: false, val: '3'}
     ];
     public mant = [
-        {val: 'Correctivo', isChecked: true},
-        {val: 'Preventivo', isChecked: false},
-        {val: 'Horas', isChecked: false}
+        {tipo: 'Correctivo', isChecked: false, val: '1'},
+        {tipo: 'Preventivo', isChecked: false, val: '2'},
+        {tipo: 'Horas', isChecked: false, val: '3'}
     ];
 
-    constructor(private modalController: ModalController, public navParams: NavParams, private auth: AuthService) {
-    }
+    public especialidadEditVal = [];
+    public prioEditVal = [];
+    public manEditVal = [];
 
     ngOnInit() {
         this.titulo = this.navParams.get('titulo');
         this.data = this.navParams.get('data');
         this.caso = this.navParams.get('number');
-        console.log(this.data, this.caso);
+        console.log(this.especialidad);
         this.auth.userData$.subscribe((res: any) => {
             this.authUser = res;
         });
+        this.especialidadEdit(this.especialidad, this.prioridad, this.mant); 
     }
 
     dismiss() {
-        // using the injected ModalController this page
-        // can "dismiss" itself and optionally pass back data
+
         this.modalController.dismiss({
             dismissed: true
         });
     }
+
+    public especialidadEdit(especialidad, prio, man): void {
+        especialidad.forEach(item => {
+            if (item.val === this.data.especialidad) {
+                item.isChecked = true;
+            }
+            this.especialidadEditVal.push(item);
+        });
+        prio.forEach(item => {
+            if (item.val === this.data.prioridad) {
+                item.isChecked = true;
+            }
+            this.prioEditVal.push(item);
+        });
+        man.forEach(item => {
+            if (item.val === this.data.mantenimiento) {
+                item.isChecked = true;
+            }
+            this.manEditVal.push(item);
+        });
+    }
+
 }
