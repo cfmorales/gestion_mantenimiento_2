@@ -94,6 +94,16 @@ const routes: Routes = [
                 ]
             },
             {
+                path: 'orden-trabajo-header',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () =>
+                            import('../pages/orden-trabajo-header/orden-trabajo-header.module').then(m => m.OrdenTrabajoHeaderPageModule)
+                    }
+                ]
+            },
+            {
                 path: 'list',
                 children: [
                     {
