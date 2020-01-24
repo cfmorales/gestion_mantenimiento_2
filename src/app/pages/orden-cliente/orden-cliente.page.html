@@ -13,31 +13,31 @@
     <!--    <app-hoja-trabajo [authUser]=authUser [especialidad]="especialidad" [mant]="mant" [prioridad]="prioridad"-->
     <!--                      [verifMan]="verifMan"></app-hoja-trabajo>-->
 
-    <ion-card *ngFor="let item of planificadorData" name="item">
-        <ion-item>
-            <strong>Area:&nbsp;</strong> {{item.area}}
-            <ion-button *ngIf=" item.fecha == ''" (click)="openModal('Editar planificacion',item, 2)"
-                        color="light"
-                        slot="end">
-                <ion-icon name="create"></ion-icon>
-            </ion-button>
-        </ion-item>
-        <ion-item>
-            <strong>Solicitado por:&nbsp;</strong> {{item.solicitado}}
-        </ion-item>
-        <ion-item>
-            <strong>Fecha:&nbsp;</strong> {{item.fecha}}
-        </ion-item>
-        <ion-item *ngIf=" item.fecha !== ''" color="success">
-            <strong>Estado:&nbsp;</strong> Listo para ser ejecutado por cliente
-        </ion-item>
-        <ion-item *ngIf=" item.fecha == ''" color="warning">
-            <strong>Estado:&nbsp;</strong> Falta configurar la fecha
-        </ion-item>
-        <ion-item>
-            <strong>Maquina:&nbsp;</strong> {{item.maquina_id.descripcion}}
-        </ion-item>
-    </ion-card>
+<!--    <ion-card *ngFor="let item of planificadorData" name="item">-->
+<!--        <ion-item>-->
+<!--            <strong>Area:&nbsp;</strong> {{item.area}}-->
+<!--            <ion-button *ngIf=" item.fecha == ''" (click)="openModal('Editar planificacion',item, 2)"-->
+<!--                        color="light"-->
+<!--                        slot="end">-->
+<!--                <ion-icon name="create"></ion-icon>-->
+<!--            </ion-button>-->
+<!--        </ion-item>-->
+<!--        <ion-item>-->
+<!--            <strong>Solicitado por:&nbsp;</strong> {{item.solicitado}}-->
+<!--        </ion-item>-->
+<!--        <ion-item>-->
+<!--            <strong>Fecha:&nbsp;</strong> {{item.fecha}}-->
+<!--        </ion-item>-->
+<!--        <ion-item *ngIf=" item.fecha !== ''" color="success">-->
+<!--            <strong>Estado:&nbsp;</strong> Listo para ser ejecutado por cliente-->
+<!--        </ion-item>-->
+<!--        <ion-item *ngIf=" item.fecha == ''" color="warning">-->
+<!--            <strong>Estado:&nbsp;</strong> Falta configurar la fecha-->
+<!--        </ion-item>-->
+<!--        <ion-item>-->
+<!--            <strong>Maquina:&nbsp;</strong> {{item.maquina_id.descripcion}}-->
+<!--        </ion-item>-->
+<!--    </ion-card>-->
 
 
 </ion-content>

@@ -49,7 +49,7 @@ export class EditModalPage implements OnInit {
         this.auth.userData$.subscribe((res: any) => {
             this.authUser = res;
         });
-        this.especialidadEdit(this.especialidad, this.prioridad, this.mant); 
+        this.especialidadEdit(this.especialidad, this.prioridad, this.mant);
     }
 
     dismiss() {

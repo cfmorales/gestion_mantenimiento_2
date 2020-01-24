@@ -43,8 +43,6 @@ export class PlanificadorPage implements OnInit {
 
     // tslint:disable-next-line:variable-name
     async openModal(titulo, data, number: number) {
-
-
         const modal = await this.modalController.create({
             component: EditModalPage, componentProps: {
                 titulo,

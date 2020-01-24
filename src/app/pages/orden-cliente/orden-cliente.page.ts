@@ -67,6 +67,11 @@ export class OrdenClientePage implements OnInit {
             this.usuarioOrdenService.usuarioOrdenData(this.postData).subscribe((res: any) => {
                 this.ordenUsuarioData = res.usuarioOrdenesData;
                 console.log(this.ordenUsuarioData);
+                // this.ordenUsuarioData[0].push({clave: 2});
+                console.log(Array.of(this.ordenUsuarioData[0]).push(2));
+                // const dateRes = this.ordenUsuarioData[0].fecha;
+                // const date = new Date();
+                // console.log(date, new Date(dateRes), dateRes);
             });
         }
     }
