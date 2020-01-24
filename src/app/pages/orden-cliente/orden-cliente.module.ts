@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { OrdenClientePageRoutingModule } from './orden-cliente-routing.module';
 
 import { OrdenClientePage } from './orden-cliente.page';
+import {ComponentsModule} from '../../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OrdenClientePageRoutingModule
+    OrdenClientePageRoutingModule,
+      ComponentsModule
   ],
   declarations: [OrdenClientePage]
 })

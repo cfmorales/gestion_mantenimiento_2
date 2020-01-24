@@ -12,7 +12,7 @@ let mock = {
     bitacoraData: require('./mock/bitacoraData'),
     maquinaData: require('./mock/maquinaData'),
     planificadorData: require('./mock/planificadorData'),
-
+    usuarioOrdenesData: require('./mock/usuarioOrdenesData'),
 };
 
 app.use(function (req, res, next) {
@@ -90,6 +90,14 @@ app.post('/planificador_get', function (req, res, next) {
         return res.status(401).send('No Access');
     }
 });
+app.post('/getUsuarioOrden', function (req, res, next) {
+    let data = JSON.parse(req.body);
+    if (data.token) {
+        return res.status(200).json(mock.usuarioOrdenesData);
+    } else {
+        return res.status(401).send('No Access');
+    }
+});
 app.post('/maquina_data', function (req, res, next) {
     let data = JSON.parse(req.body);
     if (data.token) {
@@ -124,6 +132,7 @@ app.post('/feedDelete', function (req, res, next) {
         return res.status(401).send('No Access');
     }
 });
+
 
 app.listen(backendPort, function () {
     console.log('Express server listening on port ' + backendPort);

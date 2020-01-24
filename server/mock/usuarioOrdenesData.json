@@ -1,0 +1,22 @@
+{
+  "usuarioOrdenesData": [
+    {
+      "orden_id": "1",
+      "user_id_fk": "1",
+      "fecha": "2020/02/20",
+      "estado": "0"
+    },
+    {
+      "orden_id": "2",
+      "user_id_fk": "1",
+      "fecha": "2020/02/20",
+      "estado": "0"
+    },
+    {
+      "orden_id": "3",
+      "user_id_fk": "1",
+      "fecha": "2020/02/20",
+      "estado": "0"
+    }
+  ]
+}
