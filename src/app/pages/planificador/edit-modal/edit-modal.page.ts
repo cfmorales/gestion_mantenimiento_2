@@ -80,4 +80,8 @@ export class EditModalPage implements OnInit {
         });
     }
 
+    date(fecha) {
+        return new Date(fecha);
+    }
+
 }

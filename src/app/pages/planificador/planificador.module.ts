@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { PlanificadorPageRoutingModule } from './planificador-routing.module';
+import {PlanificadorPageRoutingModule} from './planificador-routing.module';
 
-import { PlanificadorPage } from './planificador.page';
+import {PlanificadorPage} from './planificador.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    PlanificadorPageRoutingModule
-  ],
-  declarations: [PlanificadorPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        PlanificadorPageRoutingModule,
+    ],
+    declarations: [PlanificadorPage]
 })
-export class PlanificadorPageModule {}
+export class PlanificadorPageModule {
+}

@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from './../../services/auth.service';
 import {ToastService} from '../../services/toast.service';
-import {Router} from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
 import {UsuarioOrdenService} from '../../services/usuario-orden.service';
-
+import {ModalController} from '@ionic/angular';
+import {HojaTrabajoComponent} from '../../components/hoja-trabajo/hoja-trabajo.component';
 
 @Component({
     selector: 'app-orden-cliente',
@@ -51,7 +52,7 @@ export class OrdenClientePage implements OnInit {
 
     constructor(
         private auth: AuthService, private toastService: ToastService,
-        private router: Router, private usuarioOrdenService: UsuarioOrdenService
+        private router: Router, private usuarioOrdenService: UsuarioOrdenService, private modal: ModalController
     ) {
 
     }
@@ -66,14 +67,40 @@ export class OrdenClientePage implements OnInit {
         if (this.postData.token) {
             this.usuarioOrdenService.usuarioOrdenData(this.postData).subscribe((res: any) => {
                 this.ordenUsuarioData = res.usuarioOrdenesData;
-                console.log(this.ordenUsuarioData);
-                // this.ordenUsuarioData[0].push({clave: 2});
-                console.log(Array.of(this.ordenUsuarioData[0]).push(2));
-                // const dateRes = this.ordenUsuarioData[0].fecha;
-                // const date = new Date();
-                // console.log(date, new Date(dateRes), dateRes);
+
             });
         }
+    }
+
+    evaluarFecha(fecha: any) {
+        let actual = new Date();
+        let param = new Date(fecha);
+        if (actual.getFullYear() === param.getFullYear()) {
+            if (actual.getMonth() === param.getMonth()) {
+                if (actual.getDay === param.getDay) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            } else {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    }
+
+    openComponent() {
+        let navigationExtras: NavigationExtras = {
+            state: {
+                verifMan: this.verifMan,
+                especialidad: this.especialidad,
+                prioridad: this.prioridad,
+                mant: this.mant,
+                authuser: this.authUser
+            }
+        };
+        this.router.navigate(['home/orden-trabajo-general'], navigationExtras);
     }
 
 }

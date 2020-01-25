@@ -102,6 +102,15 @@ const routes: Routes = [
                             import('../pages/orden-trabajo-header/orden-trabajo-header.module').then(m => m.OrdenTrabajoHeaderPageModule)
                     }
                 ]
+            }, {
+                path: 'orden-trabajo-general',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () =>
+                            import('../pages/orden-trabajo-general/orden-trabajo-general.module').then(m => m.OrdenTrabajoGeneralPageModule)
+                    }
+                ]
             },
             {
                 path: 'list',

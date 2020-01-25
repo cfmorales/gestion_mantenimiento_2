@@ -48,8 +48,7 @@ export class BitacoraPage implements OnInit {
                         hasta: this.bitacoraHasta,
                         token: this.authUser.token
                     }
-                }
-            ;
+                };
             this.router.navigate(['home/bitacoraDetalle'], navigationExtras);
 
         } else {
