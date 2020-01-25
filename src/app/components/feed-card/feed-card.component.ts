@@ -9,7 +9,7 @@ import { FeedService } from './../../services/feed.service';
 })
 export class FeedCardComponent implements OnInit {
   @Input() loginUser: any;
-  feedData: any;
+       feedData: any;
   postData = {
     user_id: '',
     token: '',

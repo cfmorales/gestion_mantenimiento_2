@@ -3,6 +3,8 @@ import {HojaTrabajoComponent} from '../../components/hoja-trabajo/hoja-trabajo.c
 import {AuthService} from '../../services/auth.service';
 import {ToastService} from '../../services/toast.service';
 import {Router} from '@angular/router';
+import {PlanificadorService} from 'src/app/services/planificador.service';
+
 
 @Component({
     selector: 'app-orden-trabajo-general',
@@ -15,9 +17,13 @@ export class OrdenTrabajoGeneralPage implements OnInit {
     especialidad: any;
     prioridad: any;
     mant: any;
+    ordenId: any;
+    postData: any;
+    planificadorD: any;
+    orden: any;
 
     constructor(private auth: AuthService, private toastService: ToastService,
-                private router: Router) {
+                private router: Router, public planificadorService: PlanificadorService) {
     }
 
     ngOnInit() {
@@ -26,7 +32,20 @@ export class OrdenTrabajoGeneralPage implements OnInit {
         this.especialidad = this.router.getCurrentNavigation().extras.state.especialidad;
         this.prioridad = this.router.getCurrentNavigation().extras.state.prioridad;
         this.mant = this.router.getCurrentNavigation().extras.state.mant;
+        this.orden = this.router.getCurrentNavigation().extras.state.orden;
+        this.postData = {token: this.authUser.token};
+        // if (this.postData) {
+        //     this.planificadorService.planificadorData(this.postData).subscribe((res: any) => {
+        //         this.planificadorD = res.planificadorData;
+        //         this.planificadorD.forEach(item => {
+        //             if (this.ordenId === item.orden_id) {
+        //                 this.orden = item;
+        //             }
+        //         });
+        //     });
+        // }
 
     }
+
 
 }

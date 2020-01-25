@@ -3,8 +3,8 @@ import {AuthService} from './../../services/auth.service';
 import {ToastService} from '../../services/toast.service';
 import {NavigationExtras, Router} from '@angular/router';
 import {UsuarioOrdenService} from '../../services/usuario-orden.service';
-import {ModalController} from '@ionic/angular';
-import {HojaTrabajoComponent} from '../../components/hoja-trabajo/hoja-trabajo.component';
+import {AlertService} from '../../services/alert.service';
+import {PlanificadorService} from '../../services/planificador.service';
 
 @Component({
     selector: 'app-orden-cliente',
@@ -14,13 +14,9 @@ import {HojaTrabajoComponent} from '../../components/hoja-trabajo/hoja-trabajo.c
 export class OrdenClientePage implements OnInit {
     public authUser: any;
     public ordenUsuarioData: any;
+    public planificadorData: any;
 
     public postData;
-    public form = [
-        {val: 'Pepperoni', isChecked: true},
-        {val: 'Sausage', isChecked: false},
-        {val: 'Mushroom', isChecked: false}
-    ];
 
     public verifMan = [
         {val: 'Limpieza', isChecked: false},
@@ -52,7 +48,8 @@ export class OrdenClientePage implements OnInit {
 
     constructor(
         private auth: AuthService, private toastService: ToastService,
-        private router: Router, private usuarioOrdenService: UsuarioOrdenService, private modal: ModalController
+        private router: Router, private usuarioOrdenService: UsuarioOrdenService, private planificadorService: PlanificadorService,
+        private alertSerivce: AlertService
     ) {
 
     }
@@ -62,12 +59,20 @@ export class OrdenClientePage implements OnInit {
             this.authUser = res;
             this.postData = {token: this.authUser.token};
         });
+        // this.postData = {token: this.authUser.token + 'a'};
+        //
+        // if (this.postData.token) {
+        //     this.usuarioOrdenService.usuarioOrdenData(this.postData).subscribe((res: any) => {
+        //         this.ordenUsuarioData = res.usuarioOrdenesData;
+        //
+        //     });
+        // }
         this.postData = {token: this.authUser.token + 'a'};
 
-        if (this.postData.token) {
-            this.usuarioOrdenService.usuarioOrdenData(this.postData).subscribe((res: any) => {
-                this.ordenUsuarioData = res.usuarioOrdenesData;
-
+        if (this.postData) {
+            this.planificadorService.planificadorData(this.postData).subscribe((res: any) => {
+                this.planificadorData = res.planificadorData;
+                console.log(this.planificadorData);
             });
         }
     }
@@ -90,14 +95,30 @@ export class OrdenClientePage implements OnInit {
         }
     }
 
-    openComponent() {
+    openComponent(item, caso: number) {
+
+        if (caso === 0) {
+            this.alertSerivce
+                .presentAlertConfirm('Confirmación', '¿Quiere completar este mantenimiento fuera del tiempo?')
+                .then((res: any) => {
+                    if (res.role === 'okay') {
+                        this.cambioPagina(item);
+                    }
+                });
+        } else {
+            this.cambioPagina(item);
+        }
+    }
+
+    private cambioPagina(item) {
         let navigationExtras: NavigationExtras = {
             state: {
                 verifMan: this.verifMan,
                 especialidad: this.especialidad,
                 prioridad: this.prioridad,
                 mant: this.mant,
-                authuser: this.authUser
+                authUser: this.authUser,
+                orden: item
             }
         };
         this.router.navigate(['home/orden-trabajo-general'], navigationExtras);

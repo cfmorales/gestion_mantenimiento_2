@@ -10,32 +10,29 @@
 </ion-header>
 
 <ion-content>
-    <!--    <app-hoja-trabajo [authUser]=authUser [especialidad]="especialidad" [mant]="mant" [prioridad]="prioridad"-->
-    <!--                      [verifMan]="verifMan"></app-hoja-trabajo>-->
-
-    <ion-card *ngFor="let item of ordenUsuarioData" name="item">
-        <ion-item>
-            <strong>Orden ID:&nbsp;</strong> {{item.orden_id}}
-            <ion-button color="light"
-                        slot="end" (click)="openComponent()"> Efectuar el mantenimiento
-                <ion-icon name="create"></ion-icon>
-            </ion-button>
-        </ion-item>
-        <ion-item>
-            <strong>Usuario ID:&nbsp;</strong> {{authUser.name}}
-        </ion-item>
-        <ion-item *ngIf=" evaluarFecha(item.fecha) === 1" color="success">
-            <strong>Estado:&nbsp;</strong> Mantenimiento listo para ser efectuado
-        </ion-item>
-        <ion-item *ngIf=" evaluarFecha(item.fecha) === 0" color="warning">
-            <strong>Estado:&nbsp;</strong> Aún no es el dia para efectuar el mantenimiento o está
-            retrazado
-        </ion-item>
-        <ion-item>
-            <strong>Fecha mantenimiento:&nbsp;</strong> {{item.fecha}}
-        </ion-item>
-    </ion-card>
-
-
+    <div *ngFor="let item of planificadorData">
+        <ion-card name="item" *ngIf="item.fecha !== ''">
+            <ion-item>
+                <strong>Orden ID:&nbsp;</strong> {{item.orden_id}}
+                <ion-button color="light"
+                            slot="end" (click)="openComponent(item,evaluarFecha(item.fecha))"> Efectuar el mantenimiento
+                    <ion-icon name="create"></ion-icon>
+                </ion-button>
+            </ion-item>
+            <ion-item>
+                <strong>Usuario ID:&nbsp;</strong> {{authUser.name}}
+            </ion-item>
+            <ion-item *ngIf="evaluarFecha(item.fecha) === 1 " color="success">
+                <strong>Estado:&nbsp;</strong> Mantenimiento listo para ser efectuado
+            </ion-item>
+            <ion-item *ngIf=" evaluarFecha(item.fecha) === 0" color="warning">
+                <strong>Estado:&nbsp;</strong> Aún no es el dia para efectuar el mantenimiento o está
+                retrazado
+            </ion-item>
+            <ion-item>
+                <strong>Fecha mantenimiento:&nbsp;</strong> {{item.fecha}}
+            </ion-item>
+        </ion-card>
+    </div>
 </ion-content>
 

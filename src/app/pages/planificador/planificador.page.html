@@ -19,7 +19,7 @@
     <ion-card *ngFor="let item of planificadorData" name="item">
         <ion-item>
             <strong>Area:&nbsp;</strong> {{item.area}}
-            <ion-button *ngIf=" item.fecha == ''" (click)="openModal('Editar planificacion',item, 2)"
+            <ion-button (click)="openModal('Editar planificacion',item, 2)"
                         color="light"
                         slot="end">
                 <ion-icon name="create"></ion-icon>

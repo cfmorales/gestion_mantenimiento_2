@@ -11,22 +11,27 @@
             <ion-col size="6">
                 <ion-label class="ion-text-center"></ion-label>
                 <ion-item>
+                    <ion-label class='label-input'>Orden:</ion-label>
+                    <ion-input type="text" required="true" value="{{orden?.orden_id}}" readonly=""></ion-input>
+                </ion-item>
+                <ion-item>
                     <ion-label class='label-input'>Área:</ion-label>
-                    <ion-input type="text" required="true"></ion-input>
+                    <ion-input type="text" required="true" value="{{orden?.area}}" readonly=""></ion-input>
                 </ion-item>
                 <ion-label class="ion-text-center"></ion-label>
                 <ion-item>
                     <ion-label class='label-input'>Máquina:</ion-label>
-                    <ion-input type="text" required="true"></ion-input>
+                    <ion-input type="text" required="true" value="{{orden?.maquina_id.descripcion}}"
+                               readonly=""></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label class='label-input'>Proceso:</ion-label>
-                    <ion-input type="text" required="true"></ion-input>
+                    <ion-input type="text" required="true" value="{{orden?.proceso}}" readonly=""></ion-input>
                 </ion-item>
                 <ion-label class="ion-text-center"></ion-label>
                 <ion-item>
                     <ion-label class='label-input'>Solicitado por:</ion-label>
-                    <ion-input type="text" required="true"></ion-input>
+                    <ion-input type="text" required="true" value="{{orden?.solicitado}}" readonly=""></ion-input>
                 </ion-item>
             </ion-col>
 
@@ -37,21 +42,25 @@
                             <ion-label>PARADA DE PROCESO</ion-label>
                         </ion-list-header>
 
-                        <ion-item>
-                            <ion-label>Si</ion-label>
-                            <ion-radio slot="start" color="danger" value="si" checked></ion-radio>
-                        </ion-item>
+                        <div *ngIf="orden?.parada_pro === '1'">
+                            <ion-item>
+                                <ion-label>Si</ion-label>
+                                <ion-radio slot="start" color="danger" value="si" checked="" disabled=""></ion-radio>
+                            </ion-item>
+                        </div>
+                        <div *ngIf="orden?.parada_pro === '2'">
 
-                        <ion-item>
-                            <ion-label>No</ion-label>
-                            <ion-radio slot="start" color="danger" value="no"></ion-radio>
-                        </ion-item>
-
+                            <ion-item>
+                                <ion-label>No</ion-label>
+                                <ion-radio slot="start" color="danger" value="no" checked="" disabled=""></ion-radio>
+                            </ion-item>
+                        </div>
                     </ion-radio-group>
                 </ion-list>
                 <ion-item>
                     <ion-label class='label-input' position="floating">FECHA:</ion-label>
-                    <ion-datetime displayFormat="D MMM YYYY H:mm" required="true"></ion-datetime>
+                    <ion-datetime displayFormat="D MMM YYYY H:mm" required="true" value="{{orden?.fecha}}"
+                                  readonly=""></ion-datetime>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -66,7 +75,8 @@
         <ion-row>
             <ion-col>
                 <ion-item>
-                    <ion-textarea rows="15" placeholder="Ingrese la informacion aquí..."></ion-textarea>
+                    <ion-textarea rows="15" placeholder="Ingrese la informacion aquí..." value="{{orden?.sintomas}}"
+                                  readonly=""></ion-textarea>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -81,7 +91,8 @@
             <ion-col>
                 <ion-item>
                     <ion-label class='label-input' position="floating">FECHA:</ion-label>
-                    <ion-datetime displayFormat="D MMM YYYY H:mm" required="true"></ion-datetime>
+                    <ion-datetime displayFormat="D MMM YYYY H:mm" required="true" value="{{orden?.fecha_sintomas}}"
+                                  readonly=""></ion-datetime>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -105,28 +116,28 @@
         <ion-row>
             <ion-col>
                 <ion-list>
-                    <ion-item *ngFor="let entry of especialidad">
+                    <ion-item *ngFor="let entry of especialidadEditVal">
                         <ion-label>{{entry.tipo}}</ion-label>
                         <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" name="{{entry.tipo}}"
-                                      color="danger"></ion-checkbox>
+                                      color="danger" disabled=""></ion-checkbox>
                     </ion-item>
                 </ion-list>
             </ion-col>
             <ion-col>
                 <ion-list>
-                    <ion-item *ngFor="let entry of prioridad">
+                    <ion-item *ngFor="let entry of prioEditVal">
                         <ion-label>{{entry.tipo}}</ion-label>
                         <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" name="{{entry.tipo}}"
-                                      color="danger"></ion-checkbox>
+                                      color="danger" disabled=""></ion-checkbox>
                     </ion-item>
                 </ion-list>
             </ion-col>
             <ion-col>
                 <ion-list>
-                    <ion-item *ngFor="let entry of mant">
+                    <ion-item *ngFor="let entry of manEditVal">
                         <ion-label>{{entry.tipo}}</ion-label>
                         <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" name="{{entry.tipo}}"
-                                      color="danger"></ion-checkbox>
+                                      color="danger" disabled=""></ion-checkbox>
                     </ion-item>
                 </ion-list>
             </ion-col>

@@ -14,11 +14,11 @@ export class AlertService {
       message: message,
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           role: 'cancel'
         },
         {
-          text: 'Okay',
+          text: 'Aceptar',
           role: 'okay'
         }
       ]
