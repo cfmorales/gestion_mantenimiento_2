@@ -43,7 +43,7 @@ export class HomePage implements OnInit {
         },
         {
             title: 'Módulo de reportes',
-            url: '/home/list',
+            url: '/home/reportes',
             icon: 'cube'
         }
     ];

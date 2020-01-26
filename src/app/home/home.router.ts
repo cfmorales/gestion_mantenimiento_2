@@ -72,8 +72,7 @@ const routes: Routes = [
                             import('../pages/bitacora-detalle/bitacora-detalle.module').then(m => m.BitacoraDetallePageModule)
                     }
                 ]
-            }
-            ,
+            },
             {
                 path: 'repuestos',
                 children: [
@@ -83,7 +82,52 @@ const routes: Routes = [
                             import('../pages/repuestos/repuestos.module').then(m => m.RepuestosPageModule)
                     }
                 ]
-            }, {
+            },
+            {
+                path: 'reportes-alerta',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () =>
+                            import('../pages/reportes-alerta/reportes-alerta.module').then(
+                                m => m.ReportesAlertaPageModule)
+                    }
+                ]
+            },
+            {
+                path: 'reportes-ejecucion',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () =>
+                            import('../pages/reportes-ejecucion/reportes-ejecucion.module').then(
+                                m => m.ReportesEjecucionPageModule)
+                    }
+                ]
+            },
+            {
+                path: 'reportes-ficha',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () =>
+                            import('../pages/reportes-ficha-ejecucion/reportes-ficha-ejecucion.module').then(
+                                m => m.ReportesFichaEjecucionPageModule)
+                    }
+                ]
+            },
+            {
+                path: 'reportes-lista',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () =>
+                            import('../pages/reportes-lista-equipos/reportes-lista-equipos.module').then(
+                                m => m.ReportesListaEquiposPageModule)
+                    }
+                ]
+            },
+            {
                 path: 'tarjeta-de-equipo',
                 children: [
                     {
@@ -113,12 +157,12 @@ const routes: Routes = [
                 ]
             },
             {
-                path: 'list',
+                path: 'reportes',
                 children: [
                     {
                         path: '',
                         loadChildren: () =>
-                            import('../pages/list/list.module').then(m => m.ListPageModule)
+                            import('../pages/reportes/reportes.module').then(m => m.ReportesPageModule)
                     }
                 ]
             },

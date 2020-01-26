@@ -29,16 +29,14 @@ export class PlanificadorPage implements OnInit {
         this.auth.userData$.subscribe((res: any) => {
             this.authUser = res;
             this.postData = {token: this.authUser.token};
+            if (this.postData) {
+                this.planificadorService.planificadorData(this.postData).subscribe((res2: any) => {
+                    this.planificadorData = res2.planificadorData;
+                });
+            }
 
         });
-        this.postData = {token: this.authUser.token + 'a'};
 
-        if (this.postData) {
-            this.planificadorService.planificadorData(this.postData).subscribe((res: any) => {
-                this.planificadorData = res.planificadorData;
-                console.log(this.planificadorData);
-            });
-        }
     }
 
     // tslint:disable-next-line:variable-name

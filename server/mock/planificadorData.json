@@ -44,7 +44,7 @@
       "orden_id": "3",
       "area": "Almacenamiento",
       "maquina_id": {
-        "maquina_id": "1",
+        "maquina_id": "3",
         "descripcion": "Silo"
       },
       "user_id_fk": "1",
@@ -84,7 +84,7 @@
       "orden_id": "5",
       "area": "Esterilizadora",
       "maquina_id": {
-        "maquina_id": "1",
+        "maquina_id": "2",
         "descripcion": "Esterilizador"
       },
       "user_id_fk": "1",

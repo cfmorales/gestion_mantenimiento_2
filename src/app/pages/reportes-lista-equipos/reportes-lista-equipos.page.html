@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Lista de equipos a hacer mantenimiento</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-card class="ion-no-margin">
+            <form [formGroup]="todo" (ngSubmit)="processForm()">
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col>
+                            <ion-list>
+                                <ion-list>
+                                    <ion-list-header>Seleccione la máquina de la linea UHT</ion-list-header>
+
+                                    <ion-item>
+                                        <ion-label>Máquina</ion-label>
+                                        <ion-select formControlName="ingreso" name="slcMaquina" required="true">
+                                            <ion-select-option *ngFor="let item of maquinaData"
+                                                               value="{{item?.maquina_id}}" selected>
+                                                {{item?.descripcion}}</ion-select-option>
+                                        </ion-select>
+                                    </ion-item>
+                                </ion-list>
+
+                            </ion-list>
+                            <div class="ion-padding">
+                                <ion-button expand="block" type="submit" class="ion-no-margin" color="danger"
+                                            [disabled]="!todo.valid">Buscar
+                                </ion-button>
+                            </div>
+
+
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </form>
+        </ion-card>
+    </ion-grid>
+</ion-content>

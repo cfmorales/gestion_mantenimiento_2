@@ -28,27 +28,25 @@ export class BitacoraPage implements OnInit {
     ngOnInit() {
         this.auth.userData$.subscribe((res: any) => {
             this.authUser = res;
+            this.postData = {token: this.authUser.token + 'a'};
+            if (this.postData) {
+                this.maquinaService.maquinaData(this.postData).subscribe((res2: any) => {
+                    this.maquinaData = res2.maquinaData;
+                });
+            }
         });
-        this.postData = {token: this.authUser.token + 'a'};
-        if (this.postData) {
-            this.maquinaService.maquinaData(this.postData).subscribe((res: any) => {
-                this.maquinaData = res.maquinaData;
-                // console.log(this.maquinaData);
-            });
-        }
     }
 
     buscarMaquina() {
         if (this.slcMaquina && this.bitacoraDesde) {
-            console.log(this.slcMaquina);
             let navigationExtras: NavigationExtras = {
-                    state: {
-                        maquina_id: this.slcMaquina,
-                        desde: this.bitacoraDesde,
-                        hasta: this.bitacoraHasta,
-                        token: this.authUser.token
-                    }
-                };
+                state: {
+                    maquina_id: this.slcMaquina,
+                    desde: this.bitacoraDesde,
+                    hasta: this.bitacoraHasta,
+                    token: this.authUser.token
+                }
+            };
             this.router.navigate(['home/bitacoraDetalle'], navigationExtras);
 
         } else {

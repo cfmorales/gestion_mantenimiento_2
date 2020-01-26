@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Resultado de equipos</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngFor="let item of planificadorData">
+        <ion-card *ngIf="item?.maquina_id.maquina_id === idMaquina">
+            <ion-card-header>
+                {{item?.maquina_id.descripcion}}
+            </ion-card-header>
+            <ion-card-content>
+                <ion-item>
+                    <ion-label>
+                        Orden id:
+                    </ion-label>
+                    <span>
+                        {{item?.orden_id}}
+                    </span>
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                        Fecha:
+                    </ion-label>
+                    <span *ngIf="item?.fecha === ''">
+                        <strong>Fecha aun no configurada</strong>
+                    </span>
+                    <span *ngIf="item?.parada_pro !== ''">
+                        {{item?.fecha}}
+                    </span>
+
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                        Parada de proceso:
+                    </ion-label>
+                    <span *ngIf="item?.parada_pro === '1'">
+                        Se paró el uso de la máquina
+                    </span>
+                    <span *ngIf="item?.parada_pro === '2'">
+                        No se paró el uso de la máquina
+                    </span>
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

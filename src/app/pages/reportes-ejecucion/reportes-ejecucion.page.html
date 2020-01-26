@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-toolbar>
+        <ion-title>Ejecución del plan</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-card class="ion-no-margin">
+            <form [formGroup]="todo" (ngSubmit)="processForm()">
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label>Ingrese la fecha desde:</ion-label>
+                                <ion-datetime displayFormat="DD/MM/YYYY" type="text" formControlName="desde"
+                                              name="ingreso"
+                                              required="" ></ion-datetime>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Ingrese la fecha hasta:</ion-label>
+                                <ion-datetime displayFormat="DD/MM/YYYY" type="text" formControlName="hasta"
+                                              name="ingreso"
+                                              required=""></ion-datetime>
+                            </ion-item>
+                            <div class="ion-padding">
+                                <ion-button expand="block" type="submit"
+                                            class="ion-no-margin" color="danger"
+                                            [disabled]="!todo.valid">Buscar
+                                </ion-button>
+                            </div>
+
+
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </form>
+        </ion-card>
+    </ion-grid>
+
+</ion-content>
