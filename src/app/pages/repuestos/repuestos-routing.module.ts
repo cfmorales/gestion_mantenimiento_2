@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     component: RepuestosPage
-  }
+  },  { path: 'modal-seleccion', loadChildren: './modal-seleccion/modal-seleccion.module#ModalSeleccionPageModule' }
+
 ];
 
 @NgModule({

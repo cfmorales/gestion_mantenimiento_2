@@ -8,7 +8,7 @@ import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ModalPageModule} from './pages/bitacora-detalle/modal/modal.module';
-import {EditModalPageModule} from './pages/planificador/edit-modal/edit-modal.module';
+// import {EditModalPageModule} from './pages/planificador/edit-modal/edit-modal.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -19,7 +19,7 @@ import {EditModalPageModule} from './pages/planificador/edit-modal/edit-modal.mo
         AppRoutingModule,
         HttpClientModule,
         ModalPageModule,
-        EditModalPageModule,
+        // EditModalPageModule,
     ],
     providers: [
         StatusBar,

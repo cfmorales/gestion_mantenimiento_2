@@ -7,6 +7,7 @@ import {IonicModule} from '@ionic/angular';
 import {PlanificadorPageRoutingModule} from './planificador-routing.module';
 
 import {PlanificadorPage} from './planificador.page';
+import {EditModalPageModule} from './edit-modal/edit-modal.module';
 
 @NgModule({
     imports: [
@@ -14,6 +15,8 @@ import {PlanificadorPage} from './planificador.page';
         FormsModule,
         IonicModule,
         PlanificadorPageRoutingModule,
+        EditModalPageModule,
+
     ],
     declarations: [PlanificadorPage]
 })
