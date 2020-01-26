@@ -42,7 +42,9 @@ export class ModalSeleccionPage implements OnInit {
                 this.repuestoService.repuestoData(this.postData).subscribe((res2: any) => {
                     this.repuestoData = res2.repuestosData;
                     this.repuestoData.forEach(item => {
-                        if (item.codigo === this.repuesto || item.repuesto === this.repuesto) {
+                        let repuestoServer = item.repuesto.trim();
+                        let repuestoInput = this.repuesto.trim();
+                        if (item.codigo === this.repuesto || repuestoServer.toLowerCase() === repuestoInput.toLowerCase()) {
                             this.resultadoBusqueda = item;
                         }
                     });
