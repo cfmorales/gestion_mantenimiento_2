@@ -16,6 +16,6 @@ export class MaquinaService {
     }
 
   maquinaData(postData: any): Observable<any> {
-      return this.httpService.post('maquina_data', postData);
+      return this.httpService.post('maquina_get', postData);
   }
 }

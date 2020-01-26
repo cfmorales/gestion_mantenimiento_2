@@ -1,0 +1,54 @@
+{
+  "repuestosData": [
+    {
+      "codigo": "978757",
+      "repuesto": "Roller",
+      "cantidad": 2
+    },
+    {
+      "codigo": "2532544",
+      "repuesto": "Bushing",
+      "cantidad": 0
+    },
+    {
+      "codigo": "315230-157",
+      "repuesto": "Seal",
+      "cantidad": 2
+    },
+    {
+      "codigo": "315211-103",
+      "repuesto": "Seal",
+      "cantidad": 0
+    },
+    {
+      "codigo": "315211-101",
+      "repuesto": "Washer",
+      "cantidad": 2
+    },
+    {
+      "codigo": "315237-106",
+      "repuesto": "Washer",
+      "cantidad": 2
+    },
+    {
+      "codigo": "315202-110",
+      "repuesto": "O ring",
+      "cantidad": 0
+    },
+    {
+      "codigo": "978714",
+      "repuesto": "Carrier",
+      "cantidad": 2
+    },
+    {
+      "codigo": "2532544",
+      "repuesto": "Bushing",
+      "cantidad": 2
+    },
+    {
+      "codigo": "456009",
+      "repuesto": "Link",
+      "cantidad": 2
+    }
+  ]
+}

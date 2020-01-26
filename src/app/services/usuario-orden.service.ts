@@ -16,6 +16,6 @@ export class UsuarioOrdenService {
     }
 
     usuarioOrdenData(postData: any): Observable<any> {
-        return this.httpService.post('getUsuarioOrden', postData);
+        return this.httpService.post('usuariosorden_get', postData);
     }
 }

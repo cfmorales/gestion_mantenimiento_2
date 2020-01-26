@@ -1,9 +1,77 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>modal-seleccion</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Resultados</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-card *ngIf="caso==='1'">
+        <div *ngIf="resultadoBusqueda.length === 0">
+            <ion-card-header>
+                <span class="repuesto_nombre">No se encontró el repuesto</span>
+            </ion-card-header>
+        </div>
+        <div *ngIf="resultadoBusqueda.length !== 0">
+            <ion-card-header>
+                El repuesto
+                <span class="repuesto_nombre">{{repuesto}}</span>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-item>
+                    <ion-label>
+                        Código:
+                    </ion-label>
+                    <ion-input type="text" readonly=""
+                               value="{{resultadoBusqueda?.codigo}}"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                        Repuesto:
+                    </ion-label>
+                    <ion-input type="text" readonly=""
+                               value="{{resultadoBusqueda?.repuesto}}"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                        Cantidad:
+                    </ion-label>
+                    <ion-input type="number" readonly="" value="{{resultadoBusqueda?.cantidad}}"></ion-input>
+                </ion-item>
 
+            </ion-card-content>
+        </div>
+    </ion-card>
+    <ion-card *ngIf="caso==='2'">
+        <ion-card-header>
+            Por favor llene los datos de cantidad a solicitar de
+            <span class="repuesto_nombre">{{repuesto}}</span>
+        </ion-card-header>
+        <ion-card-content>
+            <form [formGroup]="todo" (ngSubmit)="processForm()">
+                <ion-item>
+                    <ion-label>
+                        Código:
+                    </ion-label>
+                    <ion-input formControlName="codigo" required="" type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                        Repuesto:
+                    </ion-label>
+                    <ion-input formControlName="repuesto" required="" type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                        Cantidad:
+                    </ion-label>
+                    <ion-input formControlName="cantidad" required="" type="number"></ion-input>
+                </ion-item>
+                <div class="ion-padding">
+                    <ion-button type="submit" class="ion-no-margin" color="medium"
+                                [disabled]="!todo.valid">Pedir
+                    </ion-button>
+                </div>
+            </form>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

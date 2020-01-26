@@ -13,6 +13,8 @@ let mock = {
     maquinaData: require('./mock/maquinaData'),
     planificadorData: require('./mock/planificadorData'),
     usuarioOrdenesData: require('./mock/usuarioOrdenesData'),
+    repuestoData: require('./mock/repuestosData'),
+
 };
 
 app.use(function (req, res, next) {
@@ -84,13 +86,14 @@ app.post('/bitacora', function (req, res, next) {
 });
 app.post('/planificador_get', function (req, res, next) {
     let data = JSON.parse(req.body);
+
     if (data.token) {
         return res.status(200).json(mock.planificadorData);
     } else {
         return res.status(401).send('No Access');
     }
 });
-app.post('/getUsuarioOrden', function (req, res, next) {
+app.post('/usuariosorden_get', function (req, res, next) {
     let data = JSON.parse(req.body);
     if (data.token) {
         return res.status(200).json(mock.usuarioOrdenesData);
@@ -98,10 +101,18 @@ app.post('/getUsuarioOrden', function (req, res, next) {
         return res.status(401).send('No Access');
     }
 });
-app.post('/maquina_data', function (req, res, next) {
+app.post('/maquina_get', function (req, res, next) {
     let data = JSON.parse(req.body);
     if (data.token) {
         return res.status(200).json(mock.maquinaData);
+    } else {
+        return res.status(401).send('No Access');
+    }
+});
+app.post('/repuestos_get', function (req, res, next) {
+    let data = JSON.parse(req.body);
+    if (data.token && data.codigo || data.repuesto) {
+        return res.status(200).json(mock.repuestoData);
     } else {
         return res.status(401).send('No Access');
     }

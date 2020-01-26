@@ -30,7 +30,10 @@ export class RepuestosPage implements OnInit {
     async processForm() {
         console.log(this.todo.value);
         const modal = await this.modalController.create({
-            component: ModalSeleccionPage, componentProps: {}
+            component: ModalSeleccionPage, componentProps: {
+                caso: this.todo.value.caso,
+                ingreso: this.todo.value.ingreso
+            }
         });
         await modal.present();
     }
