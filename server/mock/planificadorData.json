@@ -18,6 +18,7 @@
       "mantenimiento": "1",
       "recibido_sintomas": "Omar tito",
       "fecha_sintomas": "2020/02/24",
+      "repuestos": "",
       "estado": "Completo"
     },
     {
@@ -38,6 +39,7 @@
       "mantenimiento": "1",
       "recibido_sintomas": "Omar tito",
       "fecha_sintomas": "2020/02/24",
+      "repuestos": "",
       "estado": "Pendiente"
     },
     {
@@ -58,6 +60,7 @@
       "mantenimiento": "1",
       "recibido_sintomas": "Omar tito",
       "fecha_sintomas": "2020/02/21",
+      "repuestos": "",
       "estado": "Pendiente"
     },
     {
@@ -78,6 +81,7 @@
       "mantenimiento": "2",
       "recibido_sintomas": "Omar tito",
       "fecha_sintomas": "2020/02/21",
+      "repuestos": "",
       "estado": "Pendiente"
     },
     {
@@ -98,6 +102,7 @@
       "mantenimiento": "1",
       "recibido_sintomas": "Omar tito",
       "fecha_sintomas": "2020/02/21",
+      "repuestos": "",
       "estado": "Pendiente"
     },
     {
@@ -118,6 +123,7 @@
       "mantenimiento": "1",
       "recibido_sintomas": "Omar tito",
       "fecha_sintomas": "2020/02/21",
+      "repuestos": "",
       "estado": "Pendiente"
     }
   ]
