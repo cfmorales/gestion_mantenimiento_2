@@ -1,0 +1,82 @@
+<ion-content>
+    <ion-card *ngFor="let item of visblePLanificadorData">
+        <ion-card-content>
+            <ion-item>
+                <strong>Ejecutar mantenimiento</strong>
+                <ion-button (click)="cambioPaginas(item)" color="danger" slot="end">
+                    <ion-icon name="clipboard"></ion-icon>
+                </ion-button>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Orden Id:
+                </ion-label>
+                <span>{{item?.orden_id}}</span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Área:
+                </ion-label>
+                <span>{{item?.area}}</span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Máquina:
+                </ion-label>
+                <span>{{item?.maquina_id.descripcion}}</span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Proceso:
+                </ion-label>
+                <span>{{item?.proceso}}</span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Solicitado por:
+                </ion-label>
+                <span>{{item?.solicitado}}</span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Parade de proceso:
+                </ion-label>
+                <span *ngIf="item.parada_pro === '1'">Se paró el proceso</span>
+                <span *ngIf="item.parada_pro === '2'">No se Paró el proceso</span>
+
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Fecha:
+                </ion-label>
+                <span>{{item?.fecha}}</span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Sintomas:
+                </ion-label>
+                <span>{{item?.sintomas}}</span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Sintomas recibidos por:
+                </ion-label>
+                <span>{{item?.recibido_sintomas}}</span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Fecha sintomas:
+                </ion-label>
+                <span>{{item?.fecha_sintomas}}</span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Estado:
+                </ion-label>
+                <span>{{item?.estado}}</span>
+            </ion-item>
+
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

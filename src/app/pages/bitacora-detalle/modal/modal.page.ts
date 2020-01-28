@@ -19,7 +19,9 @@ export class ModalPage implements OnInit {
     }
 
     dismiss() {
-        // using the injected ModalController this page
+        // using the injected ModalController this page this.modalController.dismiss({
+        //             dismissed: true
+        //         });
         // can "dismiss" itself and optionally pass back data
         this.modalController.dismiss({
             dismissed: true

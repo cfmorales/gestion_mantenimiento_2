@@ -1,9 +1,61 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>modal-ejecucion</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Reporte de ejecucion de mantenimientos</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+    <ion-item-divider>
+        <ion-col>
+            <ion-label class="ion-text-center">
+                Rango, desde: <strong>{{desde | date:'dd/MM/yyyy'}}</strong>
+                hasta: <strong>{{hasta | date:'dd/MM/yyyy'}}</strong>
+            </ion-label>
+        </ion-col>
+    </ion-item-divider>
+    <ion-card *ngFor="let item of visblePLanificadorData">
+        <ion-card-content>
+            <ion-item>
+                <ion-label>
+                    Estado:
+                </ion-label>
+                <span class="estado">
+                    {{item?.estado}}
+                </span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Orden id:
+                </ion-label>
+                <span>
+                    {{item?.orden_id}}
+                </span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Máquina:
+                </ion-label>
+                <span>
+                    {{item?.maquina_id.descripcion}}
+                </span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Sintomas:
+                </ion-label>
+                <span>
+                    {{item?.sintomas}}
+                </span>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Fecha:
+                </ion-label>
+                <span>
+                    {{item?.fecha}}
+                </span>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

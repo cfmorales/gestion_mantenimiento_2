@@ -10,6 +10,7 @@ import {AppComponent} from './app.component';
 import {ModalPageModule} from './pages/bitacora-detalle/modal/modal.module';
 import {ModalListaPageModule} from './pages/reportes-lista-equipos/modal-lista/modal-lista.module';
 import {ModalEjecucionPageModule} from './pages/reportes-ejecucion/modal-ejecucion/modal-ejecucion.module';
+import {ModalAlertaPageModule} from './pages/reportes-alerta/modal-alerta/modal-alerta.module';
 // import {EditModalPageModule} from './pages/planificador/edit-modal/edit-modal.module';
 
 @NgModule({
@@ -24,6 +25,7 @@ import {ModalEjecucionPageModule} from './pages/reportes-ejecucion/modal-ejecuci
         // EditModalPageModule,
         ModalListaPageModule,
         ModalEjecucionPageModule,
+        ModalAlertaPageModule
     ],
     providers: [
         StatusBar,
