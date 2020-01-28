@@ -14,6 +14,7 @@ let mock = {
     planificadorData: require('./mock/planificadorData'),
     usuarioOrdenesData: require('./mock/usuarioOrdenesData'),
     repuestoData: require('./mock/repuestosData'),
+    fichaData: require('./mock/fichaEjecucionData')
 
 };
 
@@ -113,6 +114,14 @@ app.post('/repuestos_get', function (req, res, next) {
     let data = JSON.parse(req.body);
     if (data.token && data.codigo || data.repuesto) {
         return res.status(200).json(mock.repuestoData);
+    } else {
+        return res.status(401).send('No Access');
+    }
+});
+app.post('/ficha_get', function (req, res, next) {
+    let data = JSON.parse(req.body);
+    if (data.token && data.codigo) {
+        return res.status(200).json(mock.fichaData);
     } else {
         return res.status(401).send('No Access');
     }

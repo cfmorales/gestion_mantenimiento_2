@@ -13,15 +13,18 @@ export class HojaTrabajoComponent implements OnInit {
     @Input() authUser: any;
     @Input() verifMan: any;
     @Input() orden: any;
+    @Input() body: any;
+    @Input() tamanio: any;
     public especialidadEditVal = [];
     public prioEditVal = [];
     public manEditVal = [];
+    public veridManEdit = [];
 
     constructor() {
     }
 
     ngOnInit() {
-        // console.log(this.orden);
+        console.log(this.authUser, this.body);
         this.especialidadEdit();
     }
 
@@ -32,6 +35,17 @@ export class HojaTrabajoComponent implements OnInit {
             }
             this.especialidadEditVal.push(item);
         });
+        if (this.tamanio !== 0) {
+            this.verifMan.forEach(item => {
+                this.body.verificacion_mtto.array.forEach(item2 => {
+                    if (item.caso === item2.caso) {
+                        item.isChecked = true;
+                    }
+                });
+                this.veridManEdit.push(item);
+
+            });
+        }
         this.prioridad.forEach(item => {
             if (item.val === this.orden.prioridad) {
                 item.isChecked = true;

@@ -19,15 +19,15 @@ export class OrdenClientePage implements OnInit {
     public postData;
 
     public verifMan = [
-        {val: 'Limpieza', isChecked: false},
-        {val: 'Partes Eléctricas', isChecked: false},
-        {val: 'Partes Mecánicas', isChecked: false},
-        {val: 'Partes Neumaticas', isChecked: false},
-        {val: 'Tuberias', isChecked: false},
-        {val: 'Estructura', isChecked: false},
-        {val: 'Tiempo de prueba', isChecked: false},
-        {val: 'Horómetro', isChecked: false},
-        {val: 'Herramientas', isChecked: false}
+        {val: 'Limpieza', isChecked: false, caso: '1'},
+        {val: 'Partes Eléctricas', isChecked: false, caso: '2'},
+        {val: 'Partes Mecánicas', isChecked: false, caso: '3'},
+        {val: 'Partes Neumaticas', isChecked: false, caso: '4'},
+        {val: 'Tuberias', isChecked: false, caso: '5'},
+        {val: 'Estructura', isChecked: false, caso: '6'},
+        {val: 'Tiempo de prueba', isChecked: false, caso: '7'},
+        {val: 'Horómetro', isChecked: false, caso: '8'},
+        {val: 'Herramientas', isChecked: false, caso: '9'}
     ];
     public especialidad = [
         {tipo: 'Mecánica', isChecked: false, val: '1'},

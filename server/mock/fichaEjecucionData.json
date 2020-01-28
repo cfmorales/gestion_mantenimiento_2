@@ -1,0 +1,337 @@
+{
+  "fichaData": [
+    {
+      "orden_id": "1",
+      "area": "Pasteurizadora",
+      "maquina_id": {
+        "maquina_id": "1",
+        "descripcion": "Pateurizador"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "2020/01/25",
+      "sintomas": "placas quemado producto",
+      "especialidad": "1",
+      "prioridad": "2",
+      "mantenimiento": "1",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/24",
+      "detalle_trabajo": "Se recortan pernos y se pulen puntas para pernos de porta resistencias, Perno de rosca isquierda no gira con facilidad esta remordido y se traba se pule los hilos deformados esta pieza es del porta rollo de la llenadora UHT",
+      "verificacion_mtto": {
+        "array": [
+          {
+            "caso": 1
+          },
+          {
+            "caso": 3
+          },
+          {
+            "caso": 5
+          }
+        ]
+      },
+      "repuestos": {
+        "codigo": "978757",
+        "repuesto": "Roller",
+        "cantidad": 2
+      },
+      "contro_post": {
+        "funciona_eficiente": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "elim_danio": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "area_limpia": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "libre_cuerpos": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "fecha_hora": "2020/01/25",
+        "tiempo_parada": "2",
+        "nombre_usuario": "Omar Tito",
+        "firma_mtto": "Omar Tito"
+      },
+      "observaciones": "se cambia todos los empaques triclover de 1,5 in, y de 2 in, se recoloca plancha de inoxidable bajo calandrias haciendo palanca con un tablon, se evidencia plancha colocada alrevez, se coloca correctamente y se fija 3 pernos, se revisa circuito de sensor de agua, cables hasta logo ya estan colocados, pendiente circuito de control, bomba de producto tiene fuga, no se esta armando bien el sello, cada semana tiene el mismo daño",
+      "estado": "Completo"
+    },
+    {
+      "orden_id": "1",
+      "area": "Almacenamiento",
+      "maquina_id": {
+        "maquina_id": "3",
+        "descripcion": "Silo"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "2020/01/25",
+      "sintomas": "Fuga interna",
+      "especialidad": "1",
+      "prioridad": "2",
+      "mantenimiento": "1",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/24",
+      "detalle_trabajo": "Se recortan pernos y se pulen puntas para pernos de porta resistencias, Perno de rosca isquierda no gira con facilidad esta remordido y se traba se pule los hilos deformados esta pieza es del porta rollo de la llenadora UHT",
+      "verificacion_mtto": {
+        "array": [
+          {
+            "caso": 1
+          },
+          {
+            "caso": 3
+          },
+          {
+            "caso": 5
+          }
+        ]
+      },
+      "repuestos": {
+        "codigo": "978757",
+        "repuesto": "Roller",
+        "cantidad": 2
+      },
+      "contro_post": {
+        "funciona_eficiente": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "elim_danio": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "area_limpia": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "libre_cuerpos": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "fecha_hora": "2020/01/25",
+        "tiempo_parada": "2",
+        "nombre_usuario": "Omar Tito",
+        "firma_mtto": "Omar Tito"
+      },
+      "observaciones": "se cambia todos los empaques triclover de 1,5 in, y de 2 in, se recoloca plancha de inoxidable bajo calandrias haciendo palanca con un tablon, se evidencia plancha colocada alrevez, se coloca correctamente y se fija 3 pernos, se revisa circuito de sensor de agua, cables hasta logo ya estan colocados, pendiente circuito de control, bomba de producto tiene fuga, no se esta armando bien el sello, cada semana tiene el mismo daño",
+      "estado": "Pendiente"
+    },
+    {
+      "orden_id": "2",
+      "area": "Esterilizadora",
+      "maquina_id": {
+        "maquina_id": "2",
+        "descripcion": "Esterilizador"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "2",
+      "fecha": "2020/01/21",
+      "sintomas": "Reemplazo empaque",
+      "especialidad": "3",
+      "prioridad": "2",
+      "mantenimiento": "1",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/21",
+      "detalle_trabajo": "Se recortan pernos y se pulen puntas para pernos de porta resistencias, Perno de rosca isquierda no gira con facilidad esta remordido y se traba se pule los hilos deformados esta pieza es del porta rollo de la llenadora UHT",
+      "verificacion_mtto": {
+        "array": [
+          {
+            "caso": 1
+          },
+          {
+            "caso": 3
+          },
+          {
+            "caso": 5
+          }
+        ]
+      },
+      "repuestos": {
+        "codigo": "978757",
+        "repuesto": "Roller",
+        "cantidad": 2
+      },
+      "contro_post": {
+        "funciona_eficiente": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "elim_danio": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "area_limpia": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "libre_cuerpos": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "fecha_hora": "2020/01/25",
+        "tiempo_parada": "2",
+        "nombre_usuario": "Omar Tito",
+        "firma_mtto": "Omar Tito"
+      },
+      "observaciones": "se cambia todos los empaques triclover de 1,5 in, y de 2 in, se recoloca plancha de inoxidable bajo calandrias haciendo palanca con un tablon, se evidencia plancha colocada alrevez, se coloca correctamente y se fija 3 pernos, se revisa circuito de sensor de agua, cables hasta logo ya estan colocados, pendiente circuito de control, bomba de producto tiene fuga, no se esta armando bien el sello, cada semana tiene el mismo daño",
+
+      "estado": "Pendiente"
+    },
+    {
+      "orden_id": "3",
+      "area": "Almacenamiento",
+      "maquina_id": {
+        "maquina_id": "3",
+        "descripcion": "Silo"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "",
+      "sintomas": "Limpieza",
+      "especialidad": "2",
+      "prioridad": "2",
+      "mantenimiento": "2",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/21",
+      "detalle_trabajo": "Se recortan pernos y se pulen puntas para pernos de porta resistencias, Perno de rosca isquierda no gira con facilidad esta remordido y se traba se pule los hilos deformados esta pieza es del porta rollo de la llenadora UHT",
+      "verificacion_mtto": {
+        "array": [
+          {
+            "caso": 1
+          },
+          {
+            "caso": 3
+          },
+          {
+            "caso": 5
+          }
+        ]
+      },
+      "repuestos": {
+        "codigo": "978757",
+        "repuesto": "Roller",
+        "cantidad": 2
+      },
+      "contro_post": {
+        "funciona_eficiente": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "elim_danio": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "area_limpia": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "libre_cuerpos": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "fecha_hora": "2020/01/25",
+        "tiempo_parada": "2",
+        "nombre_usuario": "Omar Tito",
+        "firma_mtto": "Omar Tito"
+      },
+      "observaciones": "se cambia todos los empaques triclover de 1,5 in, y de 2 in, se recoloca plancha de inoxidable bajo calandrias haciendo palanca con un tablon, se evidencia plancha colocada alrevez, se coloca correctamente y se fija 3 pernos, se revisa circuito de sensor de agua, cables hasta logo ya estan colocados, pendiente circuito de control, bomba de producto tiene fuga, no se esta armando bien el sello, cada semana tiene el mismo daño",
+
+      "estado": "Pendiente"
+    },
+    {
+      "orden_id": "4",
+      "area": "Pasteurizadora",
+      "maquina_id": {
+        "maquina_id": "1",
+        "descripcion": "Pateurizador"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "",
+      "sintomas": "placas quemado producto",
+      "especialidad": "1",
+      "prioridad": "2",
+      "mantenimiento": "1",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/21",
+      "estado": "Pendiente"
+    },
+    {
+      "orden_id": "5",
+      "area": "Esterilizadora",
+      "maquina_id": {
+        "maquina_id": "2",
+        "descripcion": "Esterilizador"
+      },
+      "user_id_fk": "1",
+      "proceso": "",
+      "solicitado": "Omar tito",
+      "parada_pro": "1",
+      "fecha": "",
+      "sintomas": "Fuga de agua",
+      "especialidad": "1",
+      "prioridad": "2",
+      "mantenimiento": "1",
+      "recibido_sintomas": "Omar tito",
+      "fecha_sintomas": "2020/02/21",
+      "detalle_trabajo": "Se recortan pernos y se pulen puntas para pernos de porta resistencias, Perno de rosca isquierda no gira con facilidad esta remordido y se traba se pule los hilos deformados esta pieza es del porta rollo de la llenadora UHT",
+      "verificacion_mtto": {
+        "array": [
+          {
+            "caso": 1
+          },
+          {
+            "caso": 3
+          },
+          {
+            "caso": 5
+          }
+        ]
+      },
+      "repuestos": {
+        "codigo": "978757",
+        "repuesto": "Roller",
+        "cantidad": 2
+      },
+      "contro_post": {
+        "funciona_eficiente": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "elim_danio": {
+          "caso": "si",
+          "descrip": "No presenta fallas"
+        },
+        "area_limpia": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "libre_cuerpos": {
+          "caso": "si",
+          "descrip": ""
+        },
+        "fecha_hora": "2020/01/25",
+        "tiempo_parada": "2",
+        "nombre_usuario": "Omar Tito",
+        "firma_mtto": "Omar Tito"
+      },
+      "observaciones": "se cambia todos los empaques triclover de 1,5 in, y de 2 in, se recoloca plancha de inoxidable bajo calandrias haciendo palanca con un tablon, se evidencia plancha colocada alrevez, se coloca correctamente y se fija 3 pernos, se revisa circuito de sensor de agua, cables hasta logo ya estan colocados, pendiente circuito de control, bomba de producto tiene fuga, no se esta armando bien el sello, cada semana tiene el mismo daño",
+
+      "estado": "Pendiente"
+    }
+  ]
+}

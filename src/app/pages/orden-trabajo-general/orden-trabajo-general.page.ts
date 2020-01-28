@@ -34,16 +34,6 @@ export class OrdenTrabajoGeneralPage implements OnInit {
         this.mant = this.router.getCurrentNavigation().extras.state.mant;
         this.orden = this.router.getCurrentNavigation().extras.state.orden;
         this.postData = {token: this.authUser.token};
-        // if (this.postData) {
-        //     this.planificadorService.planificadorData(this.postData).subscribe((res: any) => {
-        //         this.planificadorD = res.planificadorData;
-        //         this.planificadorD.forEach(item => {
-        //             if (this.ordenId === item.orden_id) {
-        //                 this.orden = item;
-        //             }
-        //         });
-        //     });
-        // }
 
     }
 
