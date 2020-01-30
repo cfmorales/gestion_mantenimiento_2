@@ -4,7 +4,7 @@
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>reportes-ficha-ejecucion</ion-title>
+        <ion-title>Reporte ficha de Ejecucion</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -23,26 +23,26 @@
                     <ion-label class="ion-text-center"></ion-label>
                     <ion-item>
                         <ion-label class='label-input'>Orden:</ion-label>
-                        <ion-input type="text" required="true" value="{{orden?.orden_id}}" readonly=""></ion-input>
+                        <ion-input type="text" required="true" value="{{body?.orden_id}}" readonly=""></ion-input>
                     </ion-item>
                     <ion-item>
                         <ion-label class='label-input'>Área:</ion-label>
-                        <ion-input type="text" required="true" value="{{orden?.area}}" readonly=""></ion-input>
+                        <ion-input type="text" required="true" value="{{body?.area}}" readonly=""></ion-input>
                     </ion-item>
                     <ion-label class="ion-text-center"></ion-label>
                     <ion-item>
                         <ion-label class='label-input'>Máquina:</ion-label>
-                        <ion-input type="text" required="true" value="{{orden?.maquina_id.descripcion}}"
+                        <ion-input type="text" required="true" value="{{body?.maquina_id.descripcion}}"
                                    readonly=""></ion-input>
                     </ion-item>
                     <ion-item>
                         <ion-label class='label-input'>Proceso:</ion-label>
-                        <ion-input type="text" required="true" value="{{orden?.proceso}}" readonly=""></ion-input>
+                        <ion-input type="text" required="true" value="{{body?.proceso}}" readonly=""></ion-input>
                     </ion-item>
                     <ion-label class="ion-text-center"></ion-label>
                     <ion-item>
                         <ion-label class='label-input'>Solicitado por:</ion-label>
-                        <ion-input type="text" required="true" value="{{orden?.solicitado}}" readonly=""></ion-input>
+                        <ion-input type="text" required="true" value="{{body?.solicitado}}" readonly=""></ion-input>
                     </ion-item>
                 </ion-col>
 
@@ -53,14 +53,14 @@
                                 <ion-label>PARADA DE PROCESO</ion-label>
                             </ion-list-header>
 
-                            <div *ngIf="orden?.parada_pro === '1'">
+                            <div *ngIf="body?.parada_pro === '1'">
                                 <ion-item>
                                     <ion-label>Si</ion-label>
                                     <ion-radio slot="start" color="danger" value="si" checked=""
                                                disabled=""></ion-radio>
                                 </ion-item>
                             </div>
-                            <div *ngIf="orden?.parada_pro === '2'">
+                            <div *ngIf="body?.parada_pro === '2'">
 
                                 <ion-item>
                                     <ion-label>No</ion-label>
@@ -72,7 +72,7 @@
                     </ion-list>
                     <ion-item>
                         <ion-label class='label-input' position="floating">FECHA:</ion-label>
-                        <ion-datetime displayFormat="D MMM YYYY H:mm" required="true" value="{{orden?.fecha}}"
+                        <ion-datetime displayFormat="D MMM YYYY H:mm" required="true" value="{{body?.fecha}}"
                                       readonly=""></ion-datetime>
                     </ion-item>
                 </ion-col>
@@ -88,7 +88,7 @@
             <ion-row>
                 <ion-col>
                     <ion-item>
-                        <ion-textarea rows="15" placeholder="Ingrese la informacion aquí..." value="{{orden?.sintomas}}"
+                        <ion-textarea rows="15" placeholder="Ingrese la informacion aquí..." value="{{body?.sintomas}}"
                                       readonly=""></ion-textarea>
                     </ion-item>
                 </ion-col>
@@ -104,7 +104,7 @@
                 <ion-col>
                     <ion-item>
                         <ion-label class='label-input' position="floating">FECHA:</ion-label>
-                        <ion-datetime displayFormat="D MMM YYYY H:mm" required="true" value="{{orden?.fecha_sintomas}}"
+                        <ion-datetime displayFormat="D MMM YYYY H:mm" required="true" value="{{body?.fecha_sintomas}}"
                                       readonly=""></ion-datetime>
                     </ion-item>
                 </ion-col>
@@ -168,7 +168,7 @@
                     <ion-col>
                         <ion-item>
                             <ion-textarea rows="15" placeholder="Ingrese más información aquí..."
-                                          value="{{body?.detalle_trabajo}}"></ion-textarea>
+                                          value="{{body?.detalle_trabajo}}" readonly=""></ion-textarea>
                         </ion-item>
                     </ion-col>
                 </ion-row>
@@ -199,7 +199,7 @@
                             <ion-item *ngFor="let entry of veridManEdit">
                                 <ion-label>{{entry.val}}</ion-label>
                                 <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"
-                                              name="{{entry.val}}" color="danger"></ion-checkbox>
+                                              name="{{entry.val}}" color="danger" readonly=""></ion-checkbox>
 
                             </ion-item>
                         </ion-list>
@@ -207,13 +207,14 @@
                     <ion-col size="3" size-xs="6">
                         <ion-item *ngFor="let entry of veridManEdit">
                             <ion-label class='label-input' position="stacked">Extra {{entry.val}}</ion-label>
-                            <ion-input type="text"></ion-input>
+                            <ion-input type="text" readonly=""></ion-input>
                         </ion-item>
                     </ion-col>
                     <ion-col size="6" size-xs="12">
                         <ion-item>
                             <ion-textarea rows="15"
-                                          placeholder="Ingrese en el formato descripción:cantidad..."></ion-textarea>
+                                          placeholder="Ingrese en el formato descripción:cantidad..."
+                                          readonly=""></ion-textarea>
                         </ion-item>
                     </ion-col>
                 </ion-row>
@@ -240,14 +241,15 @@
                                 <ion-col>
                                     <ion-item>
                                         <ion-label>Si</ion-label>
-                                        <ion-radio item-left value="1" color="danger"></ion-radio>
+                                        <ion-radio item-left value="1" color="danger" disabled=""
+                                                   checked=""></ion-radio>
                                     </ion-item>
                                 </ion-col>
 
                                 <ion-col>
                                     <ion-item>
                                         <ion-label>No</ion-label>
-                                        <ion-radio item-left value="0" color="danger"></ion-radio>
+                                        <ion-radio item-left value="0" color="danger" disabled=""></ion-radio>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
@@ -260,14 +262,15 @@
                                 <ion-col>
                                     <ion-item>
                                         <ion-label>Si</ion-label>
-                                        <ion-radio item-left value="1" color="danger"></ion-radio>
+                                        <ion-radio item-left value="1" color="danger" disabled=""></ion-radio>
                                     </ion-item>
                                 </ion-col>
 
                                 <ion-col>
                                     <ion-item>
                                         <ion-label>No</ion-label>
-                                        <ion-radio item-left value="0" color="danger"></ion-radio>
+                                        <ion-radio item-left value="0" color="danger" disabled=""
+                                                   checked=""></ion-radio>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
@@ -280,14 +283,15 @@
                                 <ion-col>
                                     <ion-item>
                                         <ion-label>Si</ion-label>
-                                        <ion-radio item-left value="1" color="danger"></ion-radio>
+                                        <ion-radio item-left value="1" color="danger" disabled=""></ion-radio>
                                     </ion-item>
                                 </ion-col>
 
                                 <ion-col>
                                     <ion-item>
                                         <ion-label>No</ion-label>
-                                        <ion-radio item-left value="0" color="danger"></ion-radio>
+                                        <ion-radio item-left value="0" color="danger" disabled=""
+                                                   checked=""></ion-radio>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
@@ -300,40 +304,27 @@
                                 <ion-col>
                                     <ion-item>
                                         <ion-label>Si</ion-label>
-                                        <ion-radio item-left value="1" color="danger"></ion-radio>
+                                        <ion-radio item-left value="1" color="danger" disabled=""
+                                                   checked=""></ion-radio>
                                     </ion-item>
                                 </ion-col>
 
                                 <ion-col>
                                     <ion-item>
                                         <ion-label>No</ion-label>
-                                        <ion-radio item-left value="0" color="danger"></ion-radio>
+                                        <ion-radio item-left value="0" color="danger" disabled=""></ion-radio>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
                         </ion-radio-group>
 
                     </ion-col>
-                    <ion-col size-xs="6">
-                        <ion-item>
-                            <ion-input type="text" class="ctr_post_mante_inp"></ion-input>
-                        </ion-item>
-                        <ion-item>
-                            <ion-input type="text" class="ctr_post_mante_inp"></ion-input>
-                        </ion-item>
-                        <ion-item>
-                            <ion-input type="text" class="ctr_post_mante_inp"></ion-input>
-                        </ion-item>
-                        <ion-item>
-                            <ion-input type="text" class="ctr_post_mante_inp"></ion-input>
-                        </ion-item>
-                    </ion-col>
                 </ion-row>
                 <ion-row>
                     <ion-col size="4" size-xs="5">
                         <ion-item>
                             <ion-label class='label-input' position="floating">FECHA Y HORA:</ion-label>
-                            <ion-datetime displayFormat="D MMM YYYY H:mm" required="true"></ion-datetime>
+                            <ion-input value="{{body?.contro_post.fecha_hora}}" required="true" disabled=""></ion-input>
                         </ion-item>
 
                     </ion-col>
@@ -348,7 +339,8 @@
                         <ion-col>
                             <ion-item>
                                 <ion-label class='label-input' position="stacked" autofocus>Firma Usuario:</ion-label>
-                                <ion-input required="true" type="text" placeholder="Solo escriba el nombre">
+                                <ion-input required="true" value="{{body?.contro_post.firma_mtto}}" type="text"
+                                           placeholder="Solo escriba el nombre" readonly="">
                                 </ion-input>
                             </ion-item>
                         </ion-col>
@@ -358,7 +350,8 @@
                     <ion-col size="4">
                         <ion-item>
                             <ion-label class='label-input' position="floating">Tiempo total parada</ion-label>
-                            <ion-input type="text" required="true"></ion-input>
+                            <ion-input type="text" required="true" readonly=""
+                                       value="{{body?.contro_post.tiempo_parada}}"></ion-input>
                         </ion-item>
 
                     </ion-col>
@@ -366,14 +359,16 @@
                         <ion-col>
                             <ion-item>
                                 <ion-label class='label-input' position="stacked" autofocus>Nombre Mtto:</ion-label>
-                                <ion-input required="true" type="text">
+                                <ion-input required="true" type="text" readonly=""
+                                           value="{{body?.contro_post.firma_mtto}}">
                                 </ion-input>
                             </ion-item>
                         </ion-col>
                         <ion-col>
                             <ion-item>
                                 <ion-label class='label-input' position="stacked" autofocus>Firma Mtto:</ion-label>
-                                <ion-input required="true" type="text" placeholder="Solo escriba el nombre">
+                                <ion-input readonly="" required="true" type="text"
+                                           value="{{body?.contro_post.firma_mtto}}" placeholder="Solo escriba el nombre">
                                 </ion-input>
                             </ion-item>
                         </ion-col>
@@ -389,7 +384,9 @@
                 <ion-row>
                     <ion-col>
                         <ion-item>
-                            <ion-textarea rows="15" placeholder="Ingrese la informacion aquí..."></ion-textarea>
+                            <ion-textarea readonly="" rows="15"
+                                          placeholder="Ingrese la informacion aquí..."
+                                          value="{{body?.observaciones}}"></ion-textarea>
                         </ion-item>
                     </ion-col>
                 </ion-row>
@@ -397,6 +394,6 @@
 
         </ion-grid>
     </form>
-    <ion-button (click)="descargarPDF(orden)" expand="block" color="danger">Descargar pdf</ion-button>
+    <ion-button (click)="descargarPDF(body)" expand="block" color="danger">Descargar pdf</ion-button>
 
 </ion-content>
