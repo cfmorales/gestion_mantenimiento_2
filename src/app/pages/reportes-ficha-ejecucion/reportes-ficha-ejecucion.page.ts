@@ -4,7 +4,14 @@ import {ToastService} from '../../services/toast.service';
 import {Router} from '@angular/router';
 import {FichaService} from '../../services/ficha.service';
 import {PlanificadorService} from '../../services/planificador.service';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
 
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+import {File} from '@ionic-native/file/ngx';
+import {FileOpener} from '@ionic-native/file-opener/ngx';
+import {Platform} from '@ionic/angular';
 
 @Component({
     selector: 'app-reportes-ficha-ejecucion',
@@ -12,6 +19,16 @@ import {PlanificadorService} from '../../services/planificador.service';
     styleUrls: ['./reportes-ficha-ejecucion.page.scss'],
 })
 export class ReportesFichaEjecucionPage implements OnInit {
+
+    constructor(private auth: AuthService,
+                private toastService: ToastService,
+                private router: Router,
+                private fichaService: FichaService,
+                private planificadorService: PlanificadorService,
+                private plt: Platform,
+                private file: File, private fileOpener: FileOpener) {
+    }
+
     public authUser: any;
     public fichaData: any;
     public postData;
@@ -49,12 +66,7 @@ export class ReportesFichaEjecucionPage implements OnInit {
     public manEditVal = [];
     public veridManEdit = [];
 
-    constructor(private auth: AuthService,
-                private toastService: ToastService,
-                private router: Router,
-                private fichaService: FichaService,
-                private planificadorService: PlanificadorService) {
-    }
+    pdfObj = null;
 
     ngOnInit() {
 
@@ -78,6 +90,14 @@ export class ReportesFichaEjecucionPage implements OnInit {
 
         });
 
+    }
+
+    private comprobarParadaPro(caso) {
+        if (caso === '1') {
+            return 'Si';
+        } else {
+            return 'No';
+        }
     }
 
     public especialidadEdit(): void {
@@ -111,4 +131,98 @@ export class ReportesFichaEjecucionPage implements OnInit {
         });
     }
 
+    descargarPDF(ord) {
+        console.log(ord);
+        const docDefinition = {
+            content: [
+                {text: 'Datos del trabajo.', style: 'header'},
+                {
+                    alignment: 'justify',
+                    columns: [
+                        {
+                            text: ['Orden: ' + ord.orden_id + '\n',
+                                'Area: ' + ord.area + '\n',
+                                'Máquina ' + ord.maquina_id.descripcion + '\n',
+                                'Proceso:' + ord.proceso + ' \n',
+                                'Solicitado por: ' + ord.solicitado + '\n'],
+                        },
+                        {
+                            text: ['Parada de proceso: ' + this.comprobarParadaPro(ord.parada_pro) + '\n',
+                                'Fecha: ' + ord.fecha + '\n'
+                            ],
+                        }
+                    ]
+                },
+                {text: 'Sintomas de Fallas/Trabajo Realizado.', style: 'header'},
+                {
+                    alignment: 'justify',
+                    columns: [
+                        {
+                            text: [ord.sintomas + '\n'],
+                        }
+                    ],
+                },
+                {
+                    alignment: 'justify',
+                    columns: [
+                        {
+                            text: ['Recibido por: ' + ord.recibido_sintomas + '\n'],
+                        },
+                        {
+                            text: ['Fecha: ' + ord.fecha_sintomas + '\n',],
+                        }
+                    ]
+                },
+                {text: 'REMINDER', style: 'header'},
+                {text: new Date().toTimeString(), alignment: 'right'},
+
+                {text: 'From', style: 'subheader'},
+                {text: 'this.letterObj.from'},
+
+                {text: 'To', style: 'subheader'},
+                'this.letterObj.to',
+
+                {text: 'this.letterObj.text', style: 'story', margin: [0, 20, 0, 20]},
+
+                {
+                    ul: [
+                        'Bacon',
+                        'Rips',
+                        'BBQ',
+                    ]
+                }
+            ],
+            styles: {
+                header: {
+                    fontSize: 18,
+                    bold: true,
+                    alignment: 'center',
+                },
+                subheader: {
+                    fontSize: 14,
+                    bold: true,
+                    margin: [0, 15, 0, 0]
+                },
+                story: {
+                    italic: true,
+                    alignment: 'center',
+                    width: '50%',
+                }
+            }
+        };
+        this.pdfObj = pdfMake.createPdf(docDefinition);
+        if (this.plt.is('cordova')) {
+            this.pdfObj.getBuffer((buffer) => {
+                const blob = new Blob([buffer], {type: 'application/pdf'});
+                // Save the PDF to the data Directory of our App
+                this.file.writeFile(this.file.dataDirectory, 'reporteFicha.pdf', blob, {replace: true}).then(fileEntry => {
+                    // Open the PDf with the correct OS tools
+                    this.fileOpener.open(this.file.dataDirectory + 'reporteFicha.pdf', 'application/pdf');
+                });
+            });
+        } else {
+            // On a browser simply use download!
+            this.pdfObj.download();
+        }
+    }
 }

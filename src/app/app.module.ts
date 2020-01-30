@@ -12,6 +12,8 @@ import {ModalListaPageModule} from './pages/reportes-lista-equipos/modal-lista/m
 import {ModalEjecucionPageModule} from './pages/reportes-ejecucion/modal-ejecucion/modal-ejecucion.module';
 import {ModalAlertaPageModule} from './pages/reportes-alerta/modal-alerta/modal-alerta.module';
 // import {EditModalPageModule} from './pages/planificador/edit-modal/edit-modal.module';
+import {File} from '@ionic-native/file/ngx';
+import {FileOpener} from '@ionic-native/file-opener/ngx';
 
 @NgModule({
     declarations: [AppComponent],
@@ -31,6 +33,8 @@ import {ModalAlertaPageModule} from './pages/reportes-alerta/modal-alerta/modal-
         StatusBar,
         SplashScreen,
         HttpClientModule,
+        File,
+        FileOpener,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
     bootstrap: [AppComponent]
