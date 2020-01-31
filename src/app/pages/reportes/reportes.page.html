@@ -15,10 +15,14 @@
             <ion-item [routerLink]="item.url">
                 <ion-icon [name]="item.icon" slot="start"></ion-icon>
                 {{item.title}}
-                <div class="item-note" slot="end">
-                    {{item.note}}
-                </div>
+
             </ion-item>
         </div>
+<!--        //routerLink="/home/reportes-ficha"-->
+        <ion-item (click)="ejecutarModal()" class="item-pointer">
+            <ion-icon name="attach" slot="start"></ion-icon>
+            Ficha de ejecución del mantenimiento
+
+        </ion-item>
     </ion-list>
 </ion-content>

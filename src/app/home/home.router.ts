@@ -214,9 +214,15 @@ const routes: Routes = [
             },
             {
                 path: '',
-                redirectTo: '/home/feed',
+                redirectTo: '/home/reportes-alerta',
+                pathMatch: 'full'
+            },
+            {
+                path: 'home',
+                redirectTo: '/home/reportes-alerta',
                 pathMatch: 'full'
             }
+
         ]
     }
 ];

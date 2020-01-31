@@ -15,6 +15,17 @@
                     </ion-item>
 
                 </ion-menu-toggle>
+                <ion-item routerLink="/home/orden-administrador" routerDirection="forward"
+                          [class.active-item]="selectedPath === '/home/orden-administrador'"
+                          *ngIf="authUser?.role==='admin'">
+                    <ion-icon name="square-outline" slot="start"></ion-icon>
+                    Orden de trabajo administrador
+                </ion-item>
+                <ion-item routerLink="/home/planificador" routerDirection="forward"
+                          [class.active-item]="selectedPath === '/home/planificador'" *ngIf="authUser?.role == 'admin'">
+                    <ion-icon name="key" slot="start"></ion-icon>
+                    Planificador
+                </ion-item>
                 <ion-item tappable="" (click)="logoutAction()">
                     <ion-icon name="log-out" slot="start"></ion-icon>
                     Salir

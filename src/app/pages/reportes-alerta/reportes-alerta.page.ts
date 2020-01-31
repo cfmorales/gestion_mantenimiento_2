@@ -57,8 +57,8 @@ export class ReportesAlertaPage implements OnInit {
     }
 
     ngOnInit() {
-        const desde = new Date(new Date().setDate(new Date().getDate() - 2));
-        const hasta = new Date(new Date().setDate(new Date().getDate() + 2));
+        const desde = new Date(new Date().setDate(new Date().getDate() - 5));
+        const hasta = new Date(new Date().setDate(new Date().getDate() + 5));
         desde.setHours(0, 0, 0, 0);
         hasta.setHours(0, 0, 0, 0);
         this.auth.userData$.subscribe((res: any) => {

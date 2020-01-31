@@ -11,6 +11,7 @@ import {ModalPageModule} from './pages/bitacora-detalle/modal/modal.module';
 import {ModalListaPageModule} from './pages/reportes-lista-equipos/modal-lista/modal-lista.module';
 import {ModalEjecucionPageModule} from './pages/reportes-ejecucion/modal-ejecucion/modal-ejecucion.module';
 import {ModalAlertaPageModule} from './pages/reportes-alerta/modal-alerta/modal-alerta.module';
+import {ModalReporteFichaPageModule} from './pages/reportes/modal-reporte-ficha/modal-reporte-ficha.module';
 // import {EditModalPageModule} from './pages/planificador/edit-modal/edit-modal.module';
 import {File} from '@ionic-native/file/ngx';
 import {FileOpener} from '@ionic-native/file-opener/ngx';
@@ -27,7 +28,8 @@ import {FileOpener} from '@ionic-native/file-opener/ngx';
         // EditModalPageModule,
         ModalListaPageModule,
         ModalEjecucionPageModule,
-        ModalAlertaPageModule
+        ModalAlertaPageModule,
+        ModalReporteFichaPageModule
     ],
     providers: [
         StatusBar,

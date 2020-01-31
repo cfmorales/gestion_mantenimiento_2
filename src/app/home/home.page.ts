@@ -12,20 +12,20 @@ export class HomePage implements OnInit {
     private selectedItem: any;
     public appPages = [
         {
-            title: 'Home',
+            title: 'Inicio',
             url: '/home',
             icon: 'home'
         },
-        {
-            title: 'Orden de trabajo administrador',
-            url: '/home/orden-administrador',
-            icon: 'square-outline'
-        },
-        {
-            title: 'Planificador',
-            url: '/home/planificador',
-            icon: 'key'
-        },
+        // {
+        //     title: 'Orden de trabajo administrador',
+        //     url: '/home/orden-administrador',
+        //     icon: 'square-outline'
+        // },
+        // {
+        //     title: 'Planificador',
+        //     url: '/home/planificador',
+        //     icon: 'key'
+        // },
         {
             title: 'Orden de trabajo Cliente',
             url: '/home/orden-cliente',
@@ -49,17 +49,23 @@ export class HomePage implements OnInit {
     ];
 
     selectedPath = '';
+    public authUser: any;
 
     constructor(private router: Router, private authService: AuthService) {
         this.router.events.subscribe((event: RouterEvent) => {
             this.selectedPath = event.url;
         });
+        this.router.navigate(['/home/reportes-alerta']);
     }
-
 
 
     ngOnInit() {
+        this.authService.userData$.subscribe((res: any) => {
+            this.authUser = res;
+            console.log(this.authUser);
+        });
     }
+
     logoutAction() {
         this.authService.logout();
     }

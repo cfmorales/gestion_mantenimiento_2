@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>ID de la Orden</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form [formGroup]="todo" (ngSubmit)="processForm()">
+        <ion-item>
+            <ion-label>
+                Ingrese el ID de la orden
+            </ion-label>
+            <ion-input type="text" formControlName="ordenId">
+            </ion-input>
+        </ion-item>
+        <ion-button expand="block" type="submit"
+                  color="danger"
+                    [disabled]="!todo.valid">Buscar
+        </ion-button>
+    </form>
+</ion-content>

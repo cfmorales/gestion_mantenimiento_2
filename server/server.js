@@ -5,7 +5,7 @@ let bodyParser = require('body-parser');
 let backendPort = 8084;
 
 let mock = {
-    userData: require('./mock/userData'),
+    userData: require('./mock/userDataC'),
     userDataSignup: require('./mock/userDataSignup'),
     feedData: require('./mock/feedData'),
     feedDelete: require('./mock/feedDelete'),
@@ -42,7 +42,7 @@ app.post('/login', function (req, res, next) {
     let username = data.username;
     let password = data.password;
 
-    if (username === 'admin' && password === '123456') {
+    if (username === 'admin' && password === '123456' || username === 'client' && password === '123456') {
         return res.status(200).json(mock.userData);
     } else {
         return res

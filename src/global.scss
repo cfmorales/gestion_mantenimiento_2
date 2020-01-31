@@ -24,3 +24,7 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.split-pane-md.split-pane-visible > .split-pane-side {
+  border-right: 4px solid rgba(13, 5, 5, 0.17);
+}
