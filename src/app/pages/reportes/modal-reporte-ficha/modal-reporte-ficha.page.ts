@@ -9,7 +9,7 @@ import {ModalController} from '@ionic/angular';
     styleUrls: ['./modal-reporte-ficha.page.scss'],
 })
 export class ModalReporteFichaPage implements OnInit {
-    private todo: FormGroup;
+    public todo: FormGroup;
 
     constructor(private modalController: ModalController, private formBuilder: FormBuilder, private router: Router) {
         this.todo = this.formBuilder.group({

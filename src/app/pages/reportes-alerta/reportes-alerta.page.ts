@@ -13,7 +13,7 @@ import {NavigationExtras, Router} from '@angular/router';
     styleUrls: ['./reportes-alerta.page.scss'],
 })
 export class ReportesAlertaPage implements OnInit {
-    private todo: FormGroup;
+    public todo: FormGroup;
     public authUser: any;
     public planificadorData: any;
     public postData;

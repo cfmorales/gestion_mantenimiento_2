@@ -25,7 +25,7 @@ export class ReportesListaEquiposPage implements OnInit {
         });
     }
 
-    private todo: FormGroup;
+    public todo: FormGroup;
 
     ngOnInit() {
         this.auth.userData$.subscribe((res: any) => {

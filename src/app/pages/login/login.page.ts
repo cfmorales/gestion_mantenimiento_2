@@ -4,6 +4,7 @@ import {AuthConstants} from '../../config/auth-constants';
 import {AuthService} from './../../services/auth.service';
 import {StorageService} from './../../services/storage.service';
 import {ToastService} from './../../services/toast.service';
+
 @Component({
     selector: 'app-login',
     templateUrl: './login.page.html',
@@ -14,6 +15,7 @@ export class LoginPage implements OnInit {
         username: '',
         password: ''
     };
+
     constructor(
         private router: Router,
         private authService: AuthService,
@@ -21,8 +23,10 @@ export class LoginPage implements OnInit {
         private toastService: ToastService
     ) {
     }
+
     ngOnInit() {
     }
+
     validateInputs() {
         console.log(this.postData);
         let username = this.postData.username.trim();
@@ -34,6 +38,7 @@ export class LoginPage implements OnInit {
             password.length > 0
         );
     }
+
     loginAction() {
         console.log(this.postData);
         if (this.validateInputs()) {
@@ -48,7 +53,7 @@ export class LoginPage implements OnInit {
                                 window.location.reload();
                             });
                     } else {
-                        this.toastService.presentToast('Usuario o contraseña incorrecto.');
+                        this.toastService.presentToast('Usuario o contraseña incorrecto.' + res.userData);
                     }
                 },
                 (error: any) => {

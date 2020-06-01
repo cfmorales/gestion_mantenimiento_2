@@ -5,14 +5,13 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngIf="caso==='1'">
-        <div *ngIf="resultadoBusqueda.length === 0">
+    <ion-card *ngIf="caso === 1">
+        <div *ngIf="resultadoBusqueda">
             <ion-card-header>
                 <span class="repuesto_nombre">No se encontró el repuesto</span>
             </ion-card-header>
         </div>
-        <div *ngIf="resultadoBusqueda.length !== 0">
-
+        <div *ngIf="!resultadoBusqueda">
             <ion-card-header>
                 El repuesto
                 <span class="repuesto_nombre">{{repuesto}}</span>
@@ -43,7 +42,7 @@
 
         </div>
     </ion-card>
-    <ion-card *ngIf="caso==='2'">
+    <ion-card *ngIf="caso===2">
         <ion-card-header>
             Por favor llene los datos de cantidad a solicitar de
             <span class="repuesto_nombre">{{repuesto}}</span>

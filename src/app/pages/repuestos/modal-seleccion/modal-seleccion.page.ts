@@ -26,8 +26,9 @@ export class ModalSeleccionPage implements OnInit {
     public authUser: any;
     caso: number;
     repuesto: string;
-    private todo: FormGroup;
+    public todo: FormGroup;
     resultadoBusqueda = [];
+    public repuestoCounter = true;
 
     ngOnInit() {
         this.caso = this.navParams.get('caso');
@@ -48,7 +49,11 @@ export class ModalSeleccionPage implements OnInit {
                             this.resultadoBusqueda = item;
                         }
                     });
-                    console.log(this.resultadoBusqueda);
+                    if (this.resultadoBusqueda.length === 0) {
+                        this.repuestoCounter = true;
+                    } else {
+                        this.repuestoCounter = false;
+                    }
                 });
             }
         });

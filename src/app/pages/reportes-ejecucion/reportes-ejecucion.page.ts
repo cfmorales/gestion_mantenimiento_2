@@ -9,7 +9,7 @@ import {ModalEjecucionPage} from './modal-ejecucion/modal-ejecucion.page';
     styleUrls: ['./reportes-ejecucion.page.scss'],
 })
 export class ReportesEjecucionPage implements OnInit {
-    private todo: FormGroup;
+    public todo: FormGroup;
 
 
     constructor(private formBuilder: FormBuilder,

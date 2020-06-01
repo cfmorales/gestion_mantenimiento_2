@@ -21,7 +21,7 @@ export class RepuestosPage implements OnInit {
         });
     }
 
-    private todo: FormGroup;
+    public todo: FormGroup;
 
     ngOnInit() {
     }
